@@ -120,21 +120,23 @@ function CenteredFeatures({
   );
 }
 
-/* A wide photo under the copy, as on the industry and ecommerce intros. */
-function BannerSection({ section, image }: { section: ContentSection; image: MediaImage }) {
+/* Several photos that share one section sit in the column beside the copy, as the product shots do. */
+function BesideImages({ section, images }: { section: ContentSection; images: MediaImage[] }) {
+  const columns = images.length >= 3 ? "grid-cols-2" : "grid-cols-1";
   return (
     <section>
-      <Container className="py-12 md:py-16">
-        <img
-          src={image.src}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
-          loading="lazy"
-          className="mb-8 h-auto w-full"
-        />
-        <Title section={section} />
-        <ContentBody blocks={section.nodes} compact />
+      <Container className="grid items-center gap-10 py-12 md:py-16 lg:grid-cols-2 lg:gap-14">
+        <div>
+          <Title section={section} />
+          <ContentBody blocks={section.nodes} compact />
+        </div>
+        <ul className={`grid gap-4 ${columns}`}>
+          {images.map((image, index) => (
+            <li key={index} className="flex items-center justify-center">
+              <Picture image={image} className="object-contain" />
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
@@ -260,6 +262,9 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
   let hasCta = false;
   let logosPlaced = false;
   let splitPlaced = false;
+  const orphan =
+    media.gallery?.length === 1 && media.gallery[0].width / media.gallery[0].height <= 2.5 ? media.gallery[0] : undefined;
+  let orphanPlaced = false;
   const sparse: ContentSection[] = [];
   const flushSparse = () => {
     if (!sparse.length) return;
@@ -334,7 +339,12 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
     );
     const place = attached.find((item) => item.kind === "image")?.place;
     if (images.length === 1 && place === "full") {
-      body.push(<BannerSection key={index} section={section} image={images[0]} />);
+      splitPlaced = true;
+      body.push(<SplitSection key={index} section={section} image={images[0]} imageFirst />);
+      return;
+    }
+    if (images.length > 1) {
+      body.push(<BesideImages key={index} section={section} images={images} />);
       return;
     }
     if (images.length === 1 && (place === "left" || place === "right")) {
@@ -376,6 +386,11 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
       );
       return;
     }
+    if (orphan && !orphanPlaced && !images.length && section.heading && section.nodes.length) {
+      orphanPlaced = true;
+      body.push(<SplitSection key={index} section={section} image={orphan} imageFirst={false} />);
+      return;
+    }
     body.push(<PlainSection key={index} section={section} images={images} />);
   });
   flushSparse();
@@ -397,20 +412,21 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
         </section>
       ) : null}
 
-      {media.gallery?.length === 1 ? (
+      {media.gallery?.length === 1 && media.gallery[0].width / media.gallery[0].height > 2.5 ? (
         <section aria-label="Gallery">
-          <Container className="flex justify-center py-16 md:py-section">
+          <Container className="flex justify-center py-12 md:py-16">
             <img
               src={media.gallery[0].src}
               alt={media.gallery[0].alt}
               width={media.gallery[0].width}
               height={media.gallery[0].height}
               loading="lazy"
-              className="h-auto w-full max-w-5xl"
+              className="h-auto w-full"
+              style={{ maxWidth: media.gallery[0].width }}
             />
           </Container>
         </section>
-      ) : media.gallery?.length ? (
+      ) : media.gallery && media.gallery.length > 1 ? (
         <section aria-label="Gallery">
           <Container className="py-16 md:py-section">
             <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

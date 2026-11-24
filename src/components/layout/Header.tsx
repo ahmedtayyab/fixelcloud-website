@@ -169,7 +169,7 @@ function DesktopItem({
     >
       <NavLink
         className={({ isActive }) =>
-          `relative inline-flex h-full items-center gap-1.5 pr-4 font-sans text-base font-bold whitespace-nowrap transition-colors hover:text-brand ${isActive || open ? "text-brand" : "text-nav"}`
+          `relative inline-flex h-full items-center gap-1.5 pr-6 font-sans text-base font-bold whitespace-nowrap transition-colors hover:text-brand min-[1440px]:pr-8 ${isActive || open ? "text-brand" : "text-nav"}`
         }
         to={href}
         onClick={dismiss}
@@ -328,7 +328,7 @@ export function Header() {
             alt="Fixelcloud"
             width={152}
             height={36}
-            className="block h-8 w-auto sm:h-9 xl:h-[36px] xl:w-[152px]"
+            className="block h-8 w-auto sm:h-9 xl:h-[36px] xl:w-[152px] xl:-translate-y-[12%]"
           />
         </Link>
 
