@@ -93,8 +93,12 @@ export function Tabs({ items, onDark = false }: { items: { title: string; nodes:
             aria-controls={`${id}-panel`}
             tabIndex={index === active ? 0 : -1}
             onClick={() => setActive(index)}
-            className={`press min-h-[50px] bg-brand px-[30px] py-3.5 text-center text-sm leading-5 font-extrabold tracking-wide uppercase transition-colors duration-200 ${
-              index === active ? "text-white" : "text-ink hover:text-white"
+            className={`press inline-flex min-h-[50px] items-center justify-center px-6 py-4 text-center text-[15px] leading-5 font-bold tracking-wide uppercase transition-colors duration-200 ${
+              index === active
+                ? "bg-brand text-white hover:bg-brand-dark"
+                : onDark
+                  ? "border border-white/70 bg-transparent text-white hover:bg-white hover:text-ink"
+                  : "border border-brand bg-white text-brand hover:bg-brand hover:text-white"
             }`}
           >
             {item.title}
