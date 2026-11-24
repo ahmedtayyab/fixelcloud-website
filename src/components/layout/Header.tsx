@@ -23,7 +23,8 @@ function MenuLink({
   external?: boolean;
   onPick: () => void;
 }) {
-  const className = "block text-xs leading-4 font-normal whitespace-nowrap text-muted transition-colors hover:text-brand";
+  const className =
+    "block font-sans text-[12px] font-bold uppercase leading-[30px] text-[#777] transition-colors hover:text-brand";
   if (external) {
     return (
       <a className={className} href={href} target="_blank" rel="noreferrer" onClick={onPick}>
@@ -51,7 +52,7 @@ function MenuHeading({
 }) {
   return (
     <Link
-      className={`block text-base leading-4 font-medium text-ink uppercase transition-colors hover:text-brand ${className}`}
+      className={`block font-sans text-[16px] font-medium uppercase leading-normal text-[#101010] transition-colors hover:text-brand ${className}`}
       to={href}
       onClick={onPick}
     >
@@ -86,12 +87,12 @@ function MenuList({
 function ServicesMenu({ onPick }: { onPick: () => void }) {
   return (
     <Container>
-      <div className="grid grid-cols-4 items-start gap-x-10 pt-9 pb-[30px]">
+      <div className="grid grid-cols-4 items-start gap-x-8 pt-9 pb-8">
         {serviceMenu.map((column, columnIndex) => (
-          <div key={columnIndex}>
+          <div key={columnIndex} className="min-w-0">
             {column.map((group, groupIndex) => (
-              <div key={group.label} className={groupIndex > 0 ? "mt-5" : undefined}>
-                <MenuHeading href={group.href} onPick={onPick} className={groupIndex === 0 ? "min-h-8" : ""}>
+              <div key={group.label} className={groupIndex > 0 ? "mt-10" : undefined}>
+                <MenuHeading href={group.href} onPick={onPick}>
                   {group.label}
                 </MenuHeading>
                 <MenuList items={group.items} onPick={onPick} />
@@ -107,13 +108,13 @@ function ServicesMenu({ onPick }: { onPick: () => void }) {
 function IndustriesMenu({ onPick }: { onPick: () => void }) {
   return (
     <Container>
-      <div className="grid grid-cols-4 items-start gap-x-10 pt-9 pb-[30px]">
-        <MenuHeading href="/industries" onPick={onPick} className="min-h-8">
+      <div className="grid grid-cols-4 items-start gap-x-8 pt-9 pb-8">
+        <MenuHeading href="/industries" onPick={onPick}>
           All industries
         </MenuHeading>
         <MenuList items={industryLinks} onPick={onPick} className="mt-0" />
         <div>
-          <MenuHeading href={ecommerceGroup.href} onPick={onPick} className="min-h-8">
+          <MenuHeading href={ecommerceGroup.href} onPick={onPick}>
             {ecommerceGroup.label}
           </MenuHeading>
           <MenuList items={ecommerceGroup.items} onPick={onPick} />
@@ -169,7 +170,7 @@ function DesktopItem({
     >
       <NavLink
         className={({ isActive }) =>
-          `relative inline-flex items-center gap-1.5 py-[45px] text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-brand after:transition-opacity ${isActive ? "after:opacity-100" : "after:opacity-0"}`
+          `inline-flex items-center gap-1.5 py-8 pr-[17px] font-sans text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand ${isActive ? "text-brand" : ""}`
         }
         to={href}
         onClick={dismiss}
@@ -225,7 +226,7 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
       {sections.map((section) => (
         <div key={section.id} className="border-b border-line">
           <button
-            className="flex w-full items-center justify-between py-3.5 text-left text-base font-bold text-nav"
+            className="flex w-full items-center justify-between py-3.5 text-left font-sans text-base font-bold text-nav"
             type="button"
             aria-expanded={open === section.id}
             onClick={() => setOpen(open === section.id ? null : section.id)}
@@ -240,8 +241,8 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
               {section.links.map((link) => {
                 const heading = "heading" in link && link.heading;
                 const className = heading
-                  ? "block py-1.5 text-sm leading-4 font-medium text-ink uppercase"
-                  : "block py-2 text-[15px] font-medium text-muted transition-colors hover:text-brand";
+                  ? "block py-1.5 font-sans text-[16px] font-medium uppercase leading-normal text-[#101010]"
+                  : "block py-1 font-sans text-[12px] font-bold uppercase leading-[30px] text-[#777] transition-colors hover:text-brand";
                 return (
                   <li key={`${link.label}-${link.href}`} className={heading ? "pt-4 first:pt-1" : undefined}>
                     {"external" in link && link.external ? (
@@ -265,7 +266,7 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
         .map((item) => (
           <Link
             key={item.href}
-            className="block border-b border-line py-3.5 text-base font-bold text-nav"
+            className="block border-b border-line py-3.5 font-sans text-base font-bold text-nav"
             to={item.href}
             onClick={onNavigate}
           >
@@ -320,12 +321,12 @@ export function Header() {
         </div>
       </div>
 
-      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-auto xl:px-[30px]">
-        <Link to="/" aria-label="Fixelcloud home" className="shrink-0">
-          <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="h-9 w-auto xl:h-[47px]" />
+      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-[115px] xl:px-[31px]">
+        <Link to="/" aria-label="Fixelcloud home" className="flex shrink-0 items-center">
+          <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="block h-10 w-auto xl:h-[47px] xl:w-[200px]" />
         </Link>
 
-        <nav className="hidden items-center gap-4 xl:mr-auto xl:ml-4 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center xl:mr-auto xl:ml-8 xl:flex" aria-label="Primary">
           <DesktopItem label="Services" href="/services" panel={(onPick) => <ServicesMenu onPick={onPick} />} />
           <DesktopItem label="Industries" href="/industries" panel={(onPick) => <IndustriesMenu onPick={onPick} />} />
           <DesktopItem label="About Us" href="/about-us" />
@@ -339,7 +340,7 @@ export function Header() {
           />
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 xl:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <a
             className="inline-flex items-center gap-3 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
             href={usPhone.href}
