@@ -1,10 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../../data/portfolio";
+import { Button } from "../ui/Button";
 import { ArrowIcon } from "../ui/Icons";
 import { ProjectCard } from "../ui/ProjectCard";
 import { SectionTitle } from "../ui/SectionTitle";
 
-export function WorkCarousel({ eyebrow = "// Our work", title }: { eyebrow?: string; title: string }) {
+export function WorkCarousel({
+  eyebrow = "// Our work",
+  title,
+  action,
+}: {
+  eyebrow?: string;
+  title: string;
+  action?: { label: string; href: string };
+}) {
   const track = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
 
@@ -75,6 +84,11 @@ export function WorkCarousel({ eyebrow = "// Our work", title }: { eyebrow?: str
           />
         ))}
       </div>
+      {action ? (
+        <div className="mt-8 flex justify-center">
+          <Button href={action.href}>{action.label}</Button>
+        </div>
+      ) : null}
     </section>
   );
 }

@@ -295,7 +295,17 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
     }
     if (key === "introduceourprojects") {
       hasProjects = true;
-      closing.push(<WorkCarousel key={index} eyebrow={section.heading?.eyebrow} title={section.heading?.text ?? ""} />);
+      const projectAction = section.nodes.find(
+        (node) => node.type === "action" && node.label.toLowerCase() === "view all projects",
+      );
+      closing.push(
+        <WorkCarousel
+          key={index}
+          eyebrow={section.heading?.eyebrow}
+          title={section.heading?.text ?? ""}
+          action={projectAction?.type === "action" ? { label: "View all projects", href: projectAction.href } : undefined}
+        />,
+      );
       return;
     }
     if (key === "needaconsultation") {

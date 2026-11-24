@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { site } from "../../config/site";
 import { ecommerceGroup, industryLinks, mainNav, productLinks, serviceMenu } from "../../data/navigation";
 import { Collapse } from "../ui/Collapse";
+import { Container } from "../ui/Container";
 import { Flaticon, SvgIcon } from "../ui/Icons";
 
 const topbarSocials = (["facebook", "linkedin", "instagram", "dribbble"] as const).map(
@@ -22,7 +23,7 @@ function MenuLink({
   external?: boolean;
   onPick: () => void;
 }) {
-  const className = "block py-1.5 text-[15px] leading-7 font-medium text-muted transition-colors hover:text-brand";
+  const className = "block text-xs leading-4 font-normal whitespace-nowrap text-muted transition-colors hover:text-brand";
   if (external) {
     return (
       <a className={className} href={href} target="_blank" rel="noreferrer" onClick={onPick}>
@@ -37,10 +38,20 @@ function MenuLink({
   );
 }
 
-function MenuHeading({ href, children, onPick }: { href: string; children: string; onPick: () => void }) {
+function MenuHeading({
+  href,
+  children,
+  onPick,
+  className = "",
+}: {
+  href: string;
+  children: string;
+  onPick: () => void;
+  className?: string;
+}) {
   return (
     <Link
-      className="font-display text-base font-extrabold tracking-wide text-ink uppercase transition-colors hover:text-brand"
+      className={`block text-base leading-4 font-medium text-ink uppercase transition-colors hover:text-brand ${className}`}
       to={href}
       onClick={onPick}
     >
@@ -49,75 +60,20 @@ function MenuHeading({ href, children, onPick }: { href: string; children: strin
   );
 }
 
-function ServicesMenu({ onPick }: { onPick: () => void }) {
+function MenuList({
+  items,
+  onPick,
+  className = "mt-[9px]",
+}: {
+  items: { label: string; href: string; external?: boolean }[];
+  onPick: () => void;
+  className?: string;
+}) {
+  if (!items.length) return null;
   return (
-    <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-      {serviceMenu.map((column, columnIndex) => (
-        <div key={columnIndex} className="space-y-8">
-          {column.map((group) => (
-            <div key={group.label}>
-              <MenuHeading href={group.href} onPick={onPick}>
-                {group.label}
-              </MenuHeading>
-              {group.items.length ? (
-                <ul className="mt-4 border-t border-line pt-3">
-                  {group.items.map((item) => (
-                    <li key={item.href}>
-                      <MenuLink href={item.href} onPick={onPick}>
-                        {item.label}
-                      </MenuLink>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function IndustriesMenu({ onPick }: { onPick: () => void }) {
-  return (
-    <div className="grid grid-cols-2 gap-10">
-      <div>
-        <MenuHeading href="/industries" onPick={onPick}>
-          All industries
-        </MenuHeading>
-        <ul className="mt-4 border-t border-line pt-3">
-          {industryLinks.map((item) => (
-            <li key={item.href}>
-              <MenuLink href={item.href} onPick={onPick}>
-                {item.label}
-              </MenuLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <MenuHeading href={ecommerceGroup.href} onPick={onPick}>
-          {ecommerceGroup.label}
-        </MenuHeading>
-        <ul className="mt-4 border-t border-line pt-3">
-          {ecommerceGroup.items.map((item) => (
-            <li key={item.href}>
-              <MenuLink href={item.href} onPick={onPick}>
-                {item.label}
-              </MenuLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function ProductsMenu({ onPick }: { onPick: () => void }) {
-  return (
-    <ul>
-      {productLinks.map((item) => (
-        <li key={item.label}>
+    <ul className={`${className} space-y-2.5`}>
+      {items.map((item) => (
+        <li key={item.href}>
           <MenuLink href={item.href} external={item.external} onPick={onPick}>
             {item.label}
           </MenuLink>
@@ -125,6 +81,50 @@ function ProductsMenu({ onPick }: { onPick: () => void }) {
       ))}
     </ul>
   );
+}
+
+function ServicesMenu({ onPick }: { onPick: () => void }) {
+  return (
+    <Container>
+      <div className="grid grid-cols-4 items-start gap-x-10 pt-9 pb-[30px]">
+        {serviceMenu.map((column, columnIndex) => (
+          <div key={columnIndex}>
+            {column.map((group, groupIndex) => (
+              <div key={group.label} className={groupIndex > 0 ? "mt-5" : undefined}>
+                <MenuHeading href={group.href} onPick={onPick} className={groupIndex === 0 ? "min-h-8" : ""}>
+                  {group.label}
+                </MenuHeading>
+                <MenuList items={group.items} onPick={onPick} />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
+}
+
+function IndustriesMenu({ onPick }: { onPick: () => void }) {
+  return (
+    <Container>
+      <div className="grid grid-cols-4 items-start gap-x-10 pt-9 pb-[30px]">
+        <MenuHeading href="/industries" onPick={onPick} className="min-h-8">
+          All industries
+        </MenuHeading>
+        <MenuList items={industryLinks} onPick={onPick} className="mt-0" />
+        <div>
+          <MenuHeading href={ecommerceGroup.href} onPick={onPick} className="min-h-8">
+            {ecommerceGroup.label}
+          </MenuHeading>
+          <MenuList items={ecommerceGroup.items} onPick={onPick} />
+        </div>
+      </div>
+    </Container>
+  );
+}
+
+function ProductsMenu({ onPick }: { onPick: () => void }) {
+  return <MenuList items={productLinks} onPick={onPick} className="mt-0" />;
 }
 
 function DesktopItem({
@@ -188,7 +188,7 @@ function DesktopItem({
       </NavLink>
       {panel ? (
         <div
-          className={`absolute top-full z-40 border-t border-line bg-white shadow-menu transition duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"} ${panelClass ?? "inset-x-0 px-[max(30px,calc((100%-1186px)/2))] py-10"}`}
+          className={`absolute top-full z-40 border-t border-line bg-white shadow-menu transition duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"} ${panelClass ?? "inset-x-0"}`}
           inert={open ? undefined : true}
         >
           {panel(dismiss)}
@@ -240,10 +240,10 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
               {section.links.map((link) => {
                 const heading = "heading" in link && link.heading;
                 const className = heading
-                  ? "mt-3 block py-1.5 font-display text-sm font-extrabold tracking-wide text-ink uppercase"
+                  ? "block py-1.5 text-sm leading-4 font-medium text-ink uppercase"
                   : "block py-2 text-[15px] font-medium text-muted transition-colors hover:text-brand";
                 return (
-                  <li key={`${link.label}-${link.href}`}>
+                  <li key={`${link.label}-${link.href}`} className={heading ? "pt-4 first:pt-1" : undefined}>
                     {"external" in link && link.external ? (
                       <a className={className} href={link.href} target="_blank" rel="noreferrer" onClick={onNavigate}>
                         {link.label}
@@ -320,19 +320,14 @@ export function Header() {
         </div>
       </div>
 
-      <div className="relative flex h-[76px] items-center justify-between gap-6 px-5 xl:h-auto xl:px-[30px]">
+      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-auto xl:px-[30px]">
         <Link to="/" aria-label="Fixelcloud home" className="shrink-0">
           <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="h-9 w-auto xl:h-[47px]" />
         </Link>
 
-        <nav className="hidden items-center gap-7 xl:mr-auto xl:ml-8 xl:flex 2xl:ml-12" aria-label="Primary">
+        <nav className="hidden items-center gap-4 xl:mr-auto xl:ml-4 xl:flex" aria-label="Primary">
           <DesktopItem label="Services" href="/services" panel={(onPick) => <ServicesMenu onPick={onPick} />} />
-          <DesktopItem
-            label="Industries"
-            href="/industries"
-            panel={(onPick) => <IndustriesMenu onPick={onPick} />}
-            panelClass="left-0 w-[560px] p-8"
-          />
+          <DesktopItem label="Industries" href="/industries" panel={(onPick) => <IndustriesMenu onPick={onPick} />} />
           <DesktopItem label="About Us" href="/about-us" />
           <DesktopItem label="Insights" href="/blog" />
           <DesktopItem label="Contacts" href="/contacts" />
@@ -340,11 +335,11 @@ export function Header() {
             label="Our Products"
             href="/finhub"
             panel={(onPick) => <ProductsMenu onPick={onPick} />}
-            panelClass="left-0 w-60 px-6 py-5"
+            panelClass="left-0 w-48 px-[30px] py-6"
           />
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-6 xl:flex">
+        <div className="hidden shrink-0 items-center gap-4 xl:flex">
           <a
             className="inline-flex items-center gap-3 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
             href={usPhone.href}

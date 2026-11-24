@@ -45,7 +45,6 @@ export interface ContentSection {
 
 const SKIP = new Set([
   "free quote",
-  "learn more",
   "contact us",
   "search",
   "search search",
@@ -151,6 +150,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       !next.startsWith("##H") &&
       !next.startsWith("//") &&
       !next.startsWith("-") &&
+      !ACTIONS.has(next.toLowerCase()) &&
       next.length < 52 &&
       !/[.!?]$/.test(next) &&
       heading[2] &&
@@ -280,7 +280,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       while (cursor < atoms.length) {
         const heading = atoms[cursor];
         const body = atoms[cursor + 1];
-        if (heading?.type === "heading" && heading.level === 3 && body?.type === "paragraph") {
+        if (heading?.type === "heading" && heading.level === 3 && body?.type === "paragraph" && !ACTIONS.has(body.text.toLowerCase())) {
           features.push({ title: heading.text, text: body.text, number: heading.step });
           cursor += 2;
           continue;
@@ -426,7 +426,7 @@ function learnMoreHref(heading?: string) {
   const key = heading.toLowerCase().replace(/\s+/g, " ").trim();
   if (learnMoreRoutes[key]) return learnMoreRoutes[key];
   if (heading.length > 40) {
-    const slug = key.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const slug = key.replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     return `/blog/${slug}`;
   }
   return "/contacts";
