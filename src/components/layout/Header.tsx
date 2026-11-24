@@ -326,9 +326,9 @@ export function Header() {
           <img
             src={site.logo}
             alt="Fixelcloud"
-            width={200}
-            height={47}
-            className="block h-10 w-auto xl:h-auto xl:w-[clamp(155px,calc(155px+(100vw-1280px)*0.32),200px)]"
+            width={152}
+            height={36}
+            className="block h-8 w-auto sm:h-9 xl:h-[36px] xl:w-[152px]"
           />
         </Link>
 
