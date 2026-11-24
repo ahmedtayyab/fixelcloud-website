@@ -148,16 +148,15 @@ function DesktopItem({
 
   return (
     <div
-      className={panelClass ? "relative" : "static"}
-      onMouseOver={() => {
+      className={`flex h-full items-center ${panelClass ? "relative" : "static"}`}
+      onMouseEnter={() => {
         hoverRef.current = true;
         setHover(true);
+        setDismissed(false);
       }}
-      onMouseOut={(event) => {
-        if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
+      onMouseLeave={() => {
         hoverRef.current = false;
         setHover(false);
-        setDismissed(false);
       }}
       onFocus={() => {
         if (!dismissed) setFocus(true);
@@ -170,7 +169,7 @@ function DesktopItem({
     >
       <NavLink
         className={({ isActive }) =>
-          `inline-flex items-center gap-1.5 py-8 pr-[17px] font-sans text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand ${isActive ? "text-brand" : ""}`
+          `inline-flex h-full items-center gap-1.5 pr-4 font-sans text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand ${isActive ? "text-brand" : ""}`
         }
         to={href}
         onClick={dismiss}
@@ -189,7 +188,7 @@ function DesktopItem({
       </NavLink>
       {panel ? (
         <div
-          className={`absolute top-full z-40 border-t border-line bg-white shadow-menu transition duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"} ${panelClass ?? "inset-x-0"}`}
+          className={`z-40 border-t border-line bg-white shadow-menu transition duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] ${open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"} ${panelClass ? `absolute top-full ${panelClass}` : "fixed inset-x-0 top-[156px]"}`}
           inert={open ? undefined : true}
         >
           {panel(dismiss)}
@@ -326,7 +325,7 @@ export function Header() {
           <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="block h-10 w-auto xl:h-[47px] xl:w-[200px]" />
         </Link>
 
-        <nav className="hidden items-center xl:mr-auto xl:ml-8 xl:flex" aria-label="Primary">
+        <nav className="hidden h-full items-center xl:mr-auto xl:ml-6 xl:flex" aria-label="Primary">
           <DesktopItem label="Services" href="/services" panel={(onPick) => <ServicesMenu onPick={onPick} />} />
           <DesktopItem label="Industries" href="/industries" panel={(onPick) => <IndustriesMenu onPick={onPick} />} />
           <DesktopItem label="About Us" href="/about-us" />
@@ -340,7 +339,8 @@ export function Header() {
           />
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 xl:flex">
+        <div className="hidden h-full shrink-0 items-center gap-3 xl:flex">
+          <span className="h-7 w-px bg-line" aria-hidden="true" />
           <a
             className="inline-flex items-center gap-3 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
             href={usPhone.href}

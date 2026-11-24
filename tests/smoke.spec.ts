@@ -74,6 +74,17 @@ test("older addresses redirect to the current pages", async ({ page }) => {
   }
 });
 
+test("services menu stays open while the pointer moves into it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const services = page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Services", exact: true });
+  await services.hover();
+  const item = page.getByRole("link", { name: "Dedicated Teams" });
+  await expect(item).toBeVisible();
+  await item.hover();
+  await expect(item).toBeVisible();
+});
+
 test("mobile menu opens and closes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
