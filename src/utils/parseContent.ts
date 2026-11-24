@@ -10,6 +10,8 @@ export interface TitledText {
   text: string;
   /** Published step number, such as "04", when the original page numbered the item. */
   number?: string;
+  /** Related-card link, such as the other-industries cards. */
+  href?: string;
 }
 
 export interface Quote {
@@ -310,6 +312,43 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
     }
 
     if (atom.type === "heading" && atom.level === 3) {
+      const following = atoms[index + 1];
+      if (widgets && following?.type === "paragraph" && following.text.toLowerCase() === "learn more") {
+        blocks.push({
+          type: "features",
+          numbered: false,
+          items: [{ title: atom.text, text: "", href: learnMoreHref(atom.text) }],
+        });
+        index += 1;
+        continue;
+      }
+
+      const cards: TitledText[] = [];
+      let cardCursor = index;
+      while (cardCursor + 2 < atoms.length) {
+        const heading = atoms[cardCursor];
+        const body = atoms[cardCursor + 1];
+        const more = atoms[cardCursor + 2];
+        if (
+          heading?.type === "heading" &&
+          heading.level === 3 &&
+          body?.type === "paragraph" &&
+          more?.type === "list" &&
+          more.items.length === 1 &&
+          more.items[0].toLowerCase() === "learn more"
+        ) {
+          cards.push({ title: heading.text, text: body.text, href: learnMoreHref(heading.text) });
+          cardCursor += 3;
+          continue;
+        }
+        break;
+      }
+      if (widgets && cards.length >= 2) {
+        blocks.push({ type: "features", items: cards, numbered: false });
+        index = cardCursor - 1;
+        continue;
+      }
+
       const quotes: Quote[] = [];
       let cursor = index;
       while (cursor < atoms.length) {
@@ -472,6 +511,7 @@ const learnMoreRoutes: Record<string, string> = {
   "custom ecommerce design": "/ecommerce/ecommerce-design",
   "e-commerce design": "/ecommerce/ecommerce-design",
   "e-commerce integration service": "/ecommerce/ecommerce-integration-service",
+  "ecommerce integration service": "/ecommerce/ecommerce-integration-service",
   "e-commerce integration services": "/ecommerce/ecommerce-integration-service",
   "php website development services": "/services/website-development",
 };

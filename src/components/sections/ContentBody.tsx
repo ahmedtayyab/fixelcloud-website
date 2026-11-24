@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { ContentNode, Plan, TitledText } from "../../utils/parseContent";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
@@ -13,32 +14,43 @@ function looksLikeHeading(text: string) {
 }
 
 function Features({ items, numbered, compact }: { items: TitledText[]; numbered: boolean; compact: boolean }) {
-  if (!numbered && (items.length === 2 || items.length === 4)) {
+  const linked = items.some((item) => item.href);
+  if (!numbered && !linked && (items.length === 2 || items.length === 4)) {
     return <ProcessSteps items={items} />;
   }
   const columns = compact || items.length === 4 || items.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3";
   return (
     <ol className={`grid gap-5 ${columns}`}>
-      {items.map((item, index) => (
-        <li key={index} className="h-full">
-          <Reveal delay={(index % 3) * 0.08} className="h-full">
-            {numbered ? (
-              <article className="h-full">
-                <span className="font-display text-[28px] leading-none font-extrabold text-brand">
-                  {item.number ?? String(index + 1).padStart(2, "0")}.
-                </span>
-                <h3 className="heading-card mt-3">{item.title}</h3>
-                <p className="mt-3 text-base leading-8">{item.text}</p>
-              </article>
-            ) : (
-              <article className="lift flex h-full flex-col border border-line bg-white p-7">
-                <h3 className="heading-card">{item.title}</h3>
-                <p className="mt-3 text-base leading-8">{item.text}</p>
-              </article>
-            )}
-          </Reveal>
-        </li>
-      ))}
+      {items.map((item, index) => {
+        const card = numbered ? (
+          <article className="h-full">
+            <span className="font-display text-[28px] leading-none font-extrabold text-brand">
+              {item.number ?? String(index + 1).padStart(2, "0")}.
+            </span>
+            <h3 className="heading-card mt-3">{item.title}</h3>
+            <p className="mt-3 text-base leading-8">{item.text}</p>
+          </article>
+        ) : (
+          <article className="lift flex h-full flex-col border border-line bg-white p-7">
+            <h3 className="heading-card">{item.title}</h3>
+            {item.text ? <p className="mt-3 flex-1 text-base leading-8">{item.text}</p> : null}
+            {item.href ? <span className="mt-5 text-sm font-bold tracking-wide text-brand uppercase">Learn more</span> : null}
+          </article>
+        );
+        return (
+          <li key={index} className="h-full">
+            <Reveal delay={(index % 3) * 0.08} className="h-full">
+              {item.href ? (
+                <Link to={item.href} className="block h-full">
+                  {card}
+                </Link>
+              ) : (
+                card
+              )}
+            </Reveal>
+          </li>
+        );
+      })}
     </ol>
   );
 }
