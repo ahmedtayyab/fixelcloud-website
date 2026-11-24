@@ -24,7 +24,7 @@ export type ContentNode =
   | { type: "list"; items: string[] }
   | { type: "features"; items: TitledText[]; numbered: boolean }
   | { type: "plans"; items: Plan[] }
-  | { type: "tabs"; items: TitledText[] }
+  | { type: "tabs"; items: { title: string; nodes: ContentNode[] }[] }
   | { type: "accordion"; items: TitledText[] }
   | { type: "steps"; items: string[] }
   | { type: "quotes"; items: Quote[] }
@@ -97,11 +97,68 @@ function isNoise(line: string) {
 
 const isLabel = (text: string) => text.length <= 60 && !/[.!?]$/.test(text);
 const isSentence = (text: string) => text.length > 30 && /[.!?)]$/.test(text);
+/** Short unpunctuated labels used as the original tab buttons. */
+const isTabTitle = (text: string) => text.length <= 40 && !text.includes(":") && !/[.!?]$/.test(text);
 
 type Atom =
   | { type: "heading"; level: 2 | 3; text: string; eyebrow?: string; numbered?: boolean; step?: string }
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
+
+const isPanelText = (atom: Atom) => atom.type === "paragraph" && (isSentence(atom.text) || /:$/.test(atom.text));
+
+/** Paragraphs still available for later tab panels. Lists belong to a panel and do not count. */
+function countPanelTexts(atoms: Atom[], start: number) {
+  let count = 0;
+  for (let index = start; index < atoms.length; index += 1) {
+    const atom = atoms[index];
+    if (atom.type === "list") continue;
+    if (isPanelText(atom)) {
+      count += 1;
+      continue;
+    }
+    break;
+  }
+  return count;
+}
+
+/**
+ * The original tab widgets: a short label list, then one panel per label.
+ * A panel is one or more paragraphs and, on dedicated teams, the checklist that follows them.
+ * Extra paragraphs (a line break scraped as its own block) stay with the earlier panel
+ * only when every later button can still receive a paragraph.
+ */
+function takeTabs(atoms: Atom[], index: number) {
+  const titles = atoms[index].type === "list" ? atoms[index].items : [];
+  let cursor = index + 1;
+  const items: { title: string; nodes: ContentNode[] }[] = [];
+
+  for (let panel = 0; panel < titles.length; panel += 1) {
+    const nodes: ContentNode[] = [];
+    const remaining = titles.length - panel;
+
+    while (cursor < atoms.length && isPanelText(atoms[cursor])) {
+      const ahead = countPanelTexts(atoms, cursor + 1);
+      if (nodes.length > 0 && ahead < remaining - 1) break;
+      const paragraph = atoms[cursor];
+      if (paragraph.type !== "paragraph") break;
+      nodes.push({ type: "paragraph", text: paragraph.text });
+      cursor += 1;
+      if (atoms[cursor]?.type === "list") break;
+    }
+
+    const list = atoms[cursor];
+    if (list?.type === "list" && nodes.length && list.items.some((item) => item.includes(":") || item.length > 40)) {
+      nodes.push({ type: "list", items: list.items });
+      cursor += 1;
+    }
+
+    if (!nodes.some((node) => node.type === "paragraph")) return null;
+    items.push({ title: titles[panel], nodes });
+  }
+
+  return { items, next: cursor };
+}
 
 /** Turn scraped page blocks into a small set of renderable nodes. */
 export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: ParseOptions = {}) {
@@ -329,14 +386,11 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       continue;
     }
 
-    if (widgets && atom.type === "list" && atom.items.length >= 2 && atom.items.length <= 6) {
-      const panels = atoms.slice(index + 1, index + 1 + atom.items.length);
-      if (panels.length === atom.items.length && panels.every((panel) => panel.type === "paragraph" && isSentence(panel.text))) {
-        blocks.push({
-          type: "tabs",
-          items: atom.items.map((title, item) => ({ title, text: (panels[item] as { text: string }).text })),
-        });
-        index += atom.items.length;
+    if (widgets && atom.type === "list" && atom.items.length >= 2 && atom.items.length <= 6 && atom.items.every(isTabTitle)) {
+      const tabs = takeTabs(atoms, index);
+      if (tabs) {
+        blocks.push({ type: "tabs", items: tabs.items });
+        index = tabs.next - 1;
         continue;
       }
     }

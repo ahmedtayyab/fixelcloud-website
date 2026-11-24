@@ -1,5 +1,5 @@
 import { useId, useRef, useState, type KeyboardEvent } from "react";
-import type { TitledText } from "../../utils/parseContent";
+import type { ContentNode, TitledText } from "../../utils/parseContent";
 import { Collapse } from "../ui/Collapse";
 import { Flaticon, type FlaticonName } from "../ui/Icons";
 
@@ -32,7 +32,38 @@ export function ProcessSteps({ items }: { items: Step[] }) {
   );
 }
 
-export function Tabs({ items, onDark = false }: { items: TitledText[]; onDark?: boolean }) {
+function PanelCopy({ nodes, onDark }: { nodes: ContentNode[]; onDark: boolean }) {
+  return (
+    <div className={`mt-8 space-y-4 text-base leading-8 ${onDark ? "text-white/85" : "text-ink"}`}>
+      {nodes.map((node, index) => {
+        if (node.type === "paragraph") return <p key={index}>{node.text}</p>;
+        if (node.type !== "list") return null;
+        return (
+          <ul key={index} className="space-y-2.5 pt-1">
+            {node.items.map((item, position) => {
+              const split = item.indexOf(":");
+              const label = split > 0 ? item.slice(0, split) : "";
+              const rest = split > 0 ? item.slice(split + 1).trim() : item;
+              return (
+                <li key={position} className="flex gap-3">
+                  <svg aria-hidden="true" viewBox="0 0 16 16" className="mt-1.5 h-4 w-4 shrink-0 fill-none stroke-brand" strokeWidth="2">
+                    <path d="m3 8.5 3 3 7-7" />
+                  </svg>
+                  <span>
+                    {label ? <strong className="font-bold">{label}:</strong> : null}
+                    {label ? ` ${rest}` : item}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        );
+      })}
+    </div>
+  );
+}
+
+export function Tabs({ items, onDark = false }: { items: { title: string; nodes: ContentNode[] }[]; onDark?: boolean }) {
   const [active, setActive] = useState(0);
   const id = useId();
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -51,7 +82,7 @@ export function Tabs({ items, onDark = false }: { items: TitledText[]; onDark?: 
       <div role="tablist" className="flex flex-wrap gap-2.5" onKeyDown={onKeyDown}>
         {items.map((item, index) => (
           <button
-            key={index}
+            key={item.title}
             ref={(node) => {
               tabs.current[index] = node;
             }}
@@ -62,27 +93,17 @@ export function Tabs({ items, onDark = false }: { items: TitledText[]; onDark?: 
             aria-controls={`${id}-panel`}
             tabIndex={index === active ? 0 : -1}
             onClick={() => setActive(index)}
-            className={`press border px-6 py-3.5 text-[15px] leading-5 font-bold tracking-wide uppercase transition-colors duration-200 ${
-              index === active
-                ? "border-brand bg-brand text-white"
-                : onDark
-                  ? "border-white/70 bg-transparent text-white hover:bg-white/10"
-                  : "border-line bg-transparent text-ink hover:border-brand hover:text-brand"
+            className={`press min-h-[50px] bg-brand px-[30px] py-3.5 text-center text-sm leading-5 font-extrabold tracking-wide uppercase transition-colors duration-200 ${
+              index === active ? "text-white" : "text-ink hover:text-white"
             }`}
           >
             {item.title}
           </button>
         ))}
       </div>
-      <p
-        key={active}
-        role="tabpanel"
-        id={`${id}-panel`}
-        aria-labelledby={`${id}-tab-${active}`}
-        className={`mt-6 text-base leading-8 ${onDark ? "text-white/85" : ""}`}
-      >
-        {items[active]?.text}
-      </p>
+      <div key={active} role="tabpanel" id={`${id}-panel`} aria-labelledby={`${id}-tab-${active}`}>
+        <PanelCopy nodes={items[active]?.nodes ?? []} onDark={onDark} />
+      </div>
     </div>
   );
 }
