@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { media } from "../config/site";
 import { aboutSkills, aboutStats, stats } from "../data/home";
-import { ConsultationBand } from "../components/sections/ConsultationBand";
 import { PartnerStrip } from "../components/sections/PartnerStrip";
 import { Container } from "../components/ui/Container";
 import { CountUp } from "../components/ui/CountUp";
@@ -104,7 +103,7 @@ export function AboutPage() {
             </p>
             <Link
               className="group mt-6 inline-flex items-center gap-2 text-sm font-bold tracking-wide text-brand uppercase transition-colors hover:text-white"
-              to="/services/website-development"
+              to="/services"
             >
               <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
               Learn more
@@ -170,7 +169,6 @@ export function AboutPage() {
         </Container>
       </section>
 
-      <ConsultationBand />
     </>
   );
 }

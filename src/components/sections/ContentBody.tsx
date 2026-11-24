@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import type { ContentNode, Plan, TitledText } from "../../utils/parseContent";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
@@ -34,19 +33,17 @@ function Features({ items, numbered, compact }: { items: TitledText[]; numbered:
           <article className="lift flex h-full flex-col border border-line bg-white p-7">
             <h3 className="heading-card">{item.title}</h3>
             {item.text ? <p className="mt-3 flex-1 text-base leading-8">{item.text}</p> : null}
-            {item.href ? <span className="mt-5 text-sm font-bold tracking-wide text-brand uppercase">Learn more</span> : null}
+            {item.href ? (
+              <Button href={item.href} variant="tertiary" className="mt-5 self-start">
+                Learn more
+              </Button>
+            ) : null}
           </article>
         );
         return (
           <li key={index} className="h-full">
             <Reveal delay={(index % 3) * 0.08} className="h-full">
-              {item.href ? (
-                <Link to={item.href} className="block h-full">
-                  {card}
-                </Link>
-              ) : (
-                card
-              )}
+              {card}
             </Reveal>
           </li>
         );
@@ -87,8 +84,9 @@ function Plans({ items }: { items: Plan[] }) {
 }
 
 /* The first action in a section leads. Navigation and sign-in stay secondary so they do not compete with it. */
-function actionTone(label: string, lead: boolean): "primary" | "secondary" {
+function actionTone(label: string, lead: boolean): "primary" | "secondary" | "tertiary" {
   const key = label.toLowerCase();
+  if (key === "learn more") return "tertiary";
   if (!lead || key === "our services" || key === "explore the modules" || key.startsWith("sign in")) return "secondary";
   return "primary";
 }

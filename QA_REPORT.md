@@ -4,7 +4,52 @@ Date: 24 November 2026
 Scope: React frontend in this repository. The live reference is https://fixelcloud.com/.
 Verdict: **CONDITIONAL GO**
 
-The pages that were loaded render, stay inside the viewport at the widths that were measured, and keep a single main heading. The defects reproduced in this pass are fixed and were retested. This is not a full visual, accessibility, or performance sign-off. Server form delivery, off-domain map behavior, and non-Chromium browsers were not verified. Nothing in this pass was deployed.
+A parity pass on 24 November 2026 compared https://fixelcloud.com/ with this app. Structural counts (headings, service cards, icon boxes, tabs, and button labels) were taken from the live page content of the home page and all 58 content routes. Browser checks confirmed the card and header fixes below. This is not a pixel-by-pixel sign-off of every section at every viewport. Form delivery, the map off fixelcloud.com, Firefox, and WebKit were not retested.
+
+## Parity audit — 24 November 2026
+
+### What was compared
+
+Live HTML for `/` and every key in `src/data/content.json` was read from the Elementor page region (`data-elementor-type="wp-page"`). Counts: H2s, `serv-box` cards, icon boxes, `tab-link` labels, and `octf-btn` labels. Parsed app content was counted the same way for actions, linked cards, and tabs. Rendered checks used Chromium at 1440px and 390px.
+
+| Check | Result |
+|---|---|
+| Service tab sets (10 pages) | Match the live labels |
+| Industry related cards | 3 cards on each of 6 industry pages |
+| Ecommerce related cards | 2 cards on each of 3 ecommerce pages |
+| Home icon services | 6, titles linked, plus Explore us, All services, Contact us |
+| Services hub | 6 service cards, 4 reason icons, Free quote, Contact us |
+| Choose plan rows | 3 per pricing section. Label kept as “Choose plan” where the live site says “Choose Plane” |
+| Production build | `npm run build` passed (`tsc --noEmit` and Vite). Preview of that build at `/industries/retail` showed the three text links, the offer list, the four reason items, and one Contact us |
+
+### Corrections
+
+| Where | What was wrong | Fix | Retest |
+|---|---|---|---|
+| Industry and ecommerce “other” sections | Related items were filled Learn more buttons, then the whole card was one link | Cards again. Only the text “Learn more” is a tertiary link, which is how the live `serv-box` works | Retail at 1440: 3 text links, transparent background, parents are articles. Filled buttons on the page: Estimate Project and Contact us. Overflow 0 at 1440 and 390 |
+| Why choose us blog row | Three Learn more labels were filled buttons under large headings | Each post is a card. Learn more is a tertiary link to that post. All News stays the filled button | Rendered at 1440: All News filled, three text links, overflow 0 at 390 |
+| Home service grid | The whole card was a link. On the live site only the title is | Title link inside the card | Six `h3 a` links inside articles |
+| About | Learn more went to website development. The live control goes to `/services/`. A Contact us band was added; the live page has no contact button | Destination `/services`. Consultation band removed | Code review against the live anchor |
+| Team | Missing “Let’s Build Your Website!” and the client quotes. A consultation band stood in for them | Restored that heading, one Contact us button, and the client quotes | 390px: both headings present, consultation heading absent, overflow 0 |
+
+### Justified differences
+
+- Header logo stays 152×36 on desktop. At 1440 the live logo is 200×47. Both sit at x=31, and the gap from the logo to Services is 68px. The smaller logo is the size already approved for this design. It was not enlarged again.
+- FAQ support “Learn more” goes to `/contacts`. On the live site those three anchors are `href="#"`.
+- The AI messaging hero is published twice on the live site, with two Get Started buttons. This app keeps one hero and one Get Started.
+- “Choose Plane” is shown as “Choose plan”.
+- All News on the live why-choose-us page points at a theme demo blog. Ours points at `/blog`.
+- Contact us on service pages stays the filled button in our consultation or photo band. Boost Project Success stays the section button where the live page has it.
+- Primary, secondary, and tertiary button styles were not reverted to the live green button chrome.
+
+### Not executed
+
+- Every section was not screenshotted at 320, 375, 430, 768, 1024, 1280, 1920, and 2560.
+- FinHub, SalesPortal, and the portfolio case studies use a different live template, so they were not in the `wp-page` count. Their app routes were not re-walked in the browser in this pass.
+- No form was submitted. No axe or Lighthouse run.
+- `npm run test:e2e` was not re-run in this pass. The earlier smoke file is unchanged.
+
+The earlier findings below still describe the previous crawl. Where this section disagrees, this section is the later result.
 
 ## Executive summary
 

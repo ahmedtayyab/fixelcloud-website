@@ -238,7 +238,8 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
     list = null;
   };
 
-  for (const line of merged) {
+  for (let lineIndex = 0; lineIndex < merged.length; lineIndex += 1) {
+    const line = merged[lineIndex];
     if (line.startsWith("- ") || line.startsWith("– ")) {
       list = list ?? [];
       list.push(line.replace(/^[-–]\s*/, ""));
@@ -263,7 +264,8 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
     if (heading) {
       const text = heading[2];
       if (!text) continue;
-      const level = Number(heading[1]) <= 3 ? 2 : 3;
+      const followedByLearnMore = merged[lineIndex + 1]?.toLowerCase() === "learn more";
+      const level = Number(heading[1]) > 3 || (Number(heading[1]) === 3 && followedByLearnMore) ? 3 : 2;
       if (text === title && atoms.length === 0) continue;
       atoms.push({ type: "heading", level, text, eyebrow: level === 2 ? eyebrow : undefined, numbered, step });
       eyebrow = undefined;

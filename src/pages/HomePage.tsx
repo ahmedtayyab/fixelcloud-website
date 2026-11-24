@@ -69,16 +69,18 @@ export function HomePage() {
             {homeServices.map((service, index) => (
               <li key={service.href}>
                 <Reveal delay={(index % 3) * 0.06} className="h-full">
-                  <Link className="lift group block h-full border border-line bg-white px-6 py-10 text-center md:px-10" to={service.href}>
+                  <article className="lift group h-full border border-line bg-white px-6 py-10 text-center md:px-10">
                     <Flaticon
                       name={service.icon}
                       className="text-[50px] text-black transition-colors duration-200 group-hover:text-brand"
                     />
-                    <h3 className="heading-card mt-[30px] text-black transition-colors group-hover:text-brand">
-                      {service.title}
+                    <h3 className="heading-card mt-[30px]">
+                      <Link className="text-black transition-colors group-hover:text-brand" to={service.href}>
+                        {service.title}
+                      </Link>
                     </h3>
                     <p className="mt-3">{service.text}</p>
-                  </Link>
+                  </article>
                 </Reveal>
               </li>
             ))}

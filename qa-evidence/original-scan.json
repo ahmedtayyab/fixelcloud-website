@@ -1,0 +1,1106 @@
+[
+  {
+    "slug": "/",
+    "status": 200,
+    "headings": [
+      "For Over 15 Years. For Millions of Users",
+      "We Offer a Wide Variety of IT Services",
+      "Improve and Innovate with the Tech Trends",
+      "Transforming Ideas into Exceptional Digital Experiences",
+      "We are Trusted 15+ Countries Worldwide",
+      "NEED A CONSULTATION?"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Explore US",
+      "all services",
+      "Contact Us"
+    ],
+    "images": 18,
+    "iconBoxes": 6,
+    "empty": false
+  },
+  {
+    "slug": "services",
+    "status": 200,
+    "headings": [
+      "Services",
+      "We Offer a Wide Variety of IT Services",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Free Quote",
+      "Contact Us"
+    ],
+    "images": 0,
+    "iconBoxes": 10,
+    "empty": false
+  },
+  {
+    "slug": "services/website-development",
+    "status": 200,
+    "headings": [
+      "Website Development",
+      "We Provide Best Website Development",
+      "We Organize Our Production Process",
+      "Why Choosing Us?",
+      "Flexible Pricing Plans",
+      "$ 6,999",
+      "$ 12,999",
+      "$ 18,999",
+      "We are Trusted 15+ Countries Worldwide",
+      "Introduce Our Projects",
+      "Custom Websites Built for Performance."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Analysis",
+      "Design",
+      "Testing"
+    ],
+    "buttons": [
+      "Choose Plan",
+      "Choose Plan",
+      "Choose Plan",
+      "Contact Us"
+    ],
+    "images": 6,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "services/mobile-development",
+    "status": 200,
+    "headings": [
+      "Mobile Development",
+      "App Development Services",
+      "Our App Development Approach",
+      "Flexible Pricing Plans",
+      "$ 5,000",
+      "$ 15,000",
+      "$ 25,000",
+      "We are Trusted 15+ Countries Worldwide",
+      "Introduce Our Projects",
+      "Mobile Apps That Users Love."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Choose Plane",
+      "Choose Plane",
+      "Choose Plane",
+      "Contact Us"
+    ],
+    "images": 8,
+    "iconBoxes": 12,
+    "empty": false
+  },
+  {
+    "slug": "services/mean-mern-development",
+    "status": 200,
+    "headings": [
+      "MEAN / MERN Development",
+      "MEAN / MERN Development",
+      "Why Choosing Our MEAN/MERN Development Services?",
+      "We Organize Our Production Process",
+      "Introduce Our Projects",
+      "Full-Stack Power, Front to Back."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Analysis",
+      "Design",
+      "Testing"
+    ],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 6,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "services/cloud-strategy",
+    "status": 200,
+    "headings": [
+      "Cloud Strategy",
+      "Cloud Strategy Services",
+      "Innovative Services to Power Your Digital Future",
+      "Cloud Strategy Benefits",
+      "Introduce Our Projects",
+      "Scale Smarter with the Cloud"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 9,
+    "iconBoxes": 12,
+    "empty": false
+  },
+  {
+    "slug": "cooperative-staff-model",
+    "status": 200,
+    "headings": [
+      "Cooperative Staff Model"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "cooperative-staff-model/staff-augmentation",
+    "status": 200,
+    "headings": [
+      "Staff Augmentation",
+      "Our staff augmentation expertise:",
+      "Precision, Performance, Progress",
+      "How to hire a development team for your business?",
+      "We are Trusted 15+ Countries Worldwide",
+      "Scale Your Team Without the Hassle"
+    ],
+    "cards": 0,
+    "tabs": [
+      "Assessment",
+      "Talent Selection",
+      "Onboarding"
+    ],
+    "buttons": [
+      "Boost Project Success"
+    ],
+    "images": 2,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "cooperative-staff-model/dedicated-teams",
+    "status": 200,
+    "headings": [
+      "Dedicated Teams",
+      "Hire dedicated remote teams across a range of service verticals",
+      "Precision, Performance, Progress",
+      "How to hire a dedicated development team for your business?",
+      "We are Trusted 15+ Countries Worldwide",
+      "Your Remote Team, Fully Aligned."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Software Development",
+      "Data & AI",
+      "Cloud"
+    ],
+    "buttons": [
+      "Boost Project Success"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "cooperative-staff-model/digital-acceleration",
+    "status": 200,
+    "headings": [
+      "Digital Acceleration",
+      "Our Digital Acceleration expertise:",
+      "Precision, Transformation, Progress",
+      "Benefits of Digital Acceleration",
+      "We are Trusted 15+ Countries Worldwide",
+      "Fast-Track Your Digital Future."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Contact Us",
+      "Boost Project Success"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "social-media-marketing",
+    "status": 200,
+    "headings": [
+      "Social Media Marketing"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "social-media-marketing/social-media-management",
+    "status": 200,
+    "headings": [
+      "Social Media Management",
+      "Social Media Management Services",
+      "Why Choose Us?",
+      "Platforms We Manage",
+      "Feedback That Fuels Us"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "social-media-marketing/social-media-advertising",
+    "status": 200,
+    "headings": [
+      "Social Media Advertising",
+      "Social Media Advertising Services",
+      "Why Choose Us?",
+      "Platforms We Manage",
+      "We are Trusted 15+ Countries Worldwide"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "social-media-marketing/content-marketing",
+    "status": 200,
+    "headings": [
+      "Content Marketing",
+      "Content Marketing",
+      "Why Choose Us?",
+      "Platforms We Manage",
+      "We are Trusted 15+ Countries Worldwide"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "generative-ai-and-data",
+    "status": 200,
+    "headings": [
+      "Generative AI and Data"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "generative-ai-and-data/artificial-intelligence",
+    "status": 200,
+    "headings": [
+      "Artificial Intelligence",
+      "Lead in the age of generative AI",
+      "Benefits of Generative AI",
+      "Why Choose Fixelcloud for AI?",
+      "AI Chatbot Integrations",
+      "We are Trusted 15+ Countries Worldwide",
+      "Smarter Solutions Start Here."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Efficient",
+      "Enhanced Creativity",
+      "Scalability"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Launch Your AI Chatbot Now",
+      "Contact Us"
+    ],
+    "images": 2,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "generative-ai-and-data/machine-learning",
+    "status": 200,
+    "headings": [
+      "Machine Learning",
+      "Lead in the age of generative ML",
+      "Benefits of Generative ML",
+      "Why Choose Fixelcloud for ML?",
+      "We are Trusted 15+ Countries Worldwide",
+      "Let’s Build Intelligent Systems"
+    ],
+    "cards": 0,
+    "tabs": [
+      "Decision-Making",
+      "Scalability",
+      "Competitive"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "generative-ai-and-data/data-engineering",
+    "status": 200,
+    "headings": [
+      "Data Engineering",
+      "Data Engineering Services",
+      "Benefits of Data Engineering",
+      "Why Choose Fixelcloud for DE?",
+      "We are Trusted 15+ Countries Worldwide",
+      "Data You Can Trust, Infrastructure That Scales."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Data Accessibility",
+      "Data Quality",
+      "Real-Time"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "design-ideation",
+    "status": 200,
+    "headings": [
+      "Design and Ideation"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "design-ideation/user-research",
+    "status": 200,
+    "headings": [
+      "User Research",
+      "Our Research Process",
+      "Why Choose Fixelcloud for User Research?",
+      "How to Conduct Effective User Research",
+      "We are Trusted 15+ Countries Worldwide",
+      "Design with Confidence, Backed by Data."
+    ],
+    "cards": 0,
+    "tabs": [
+      "Analysis",
+      "Design",
+      "Testing"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 0,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "design-ideation/product-design",
+    "status": 200,
+    "headings": [
+      "Product Design",
+      "What We Offer",
+      "Our Product Design Process",
+      "Tools we use",
+      "Why Choose Fixelcloud for User Research?",
+      "Intuitive & Scalable Digital Products",
+      "We are Trusted 15+ Countries Worldwide",
+      "From Idea to Experience."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 13,
+    "iconBoxes": 8,
+    "empty": false
+  },
+  {
+    "slug": "design-ideation/ui-ux-design",
+    "status": 200,
+    "headings": [
+      "UI/UX Design",
+      "Our UX/UI Design Processes",
+      "Tools we use",
+      "Flexible Pricing Plans",
+      "$ 2000",
+      "$ 5000",
+      "$ 10000",
+      "Our Team Member",
+      "In-demand team of UI/UX Designers",
+      "Beautiful Interfaces, Seamless Experiences."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Choose Plane",
+      "Choose Plane",
+      "Choose Plane",
+      "Contact Us"
+    ],
+    "images": 35,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "design-ideation/design-system",
+    "status": 200,
+    "headings": [
+      "Design System",
+      "The Foundation of Scalable Design",
+      "Our Design System Services",
+      "Tools we use",
+      "Consistency Meets Efficiency."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 9,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "ui-ux-design",
+    "status": 200,
+    "headings": [
+      "UI/UX Design",
+      "Our UX/UI Design Processes",
+      "Tools we use",
+      "Flexible Pricing Plans",
+      "$ 2000",
+      "$ 5000",
+      "$ 10000",
+      "Our Team Member",
+      "In-demand team of UI/UX Designers",
+      "Beautiful Interfaces, Seamless Experiences."
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Choose Plane",
+      "Choose Plane",
+      "Choose Plane",
+      "Contact Us"
+    ],
+    "images": 35,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "enterprise-solutions",
+    "status": 200,
+    "headings": [
+      "Maintenance"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "enterprise-solutions/quality-assurance",
+    "status": 200,
+    "headings": [
+      "Quality Assurance",
+      "Our QA engineers make your product flawless",
+      "Why Quality Assurance Matters",
+      "Benefits of Our QA Services",
+      "We are Trusted 15+ Countries Worldwide",
+      "Deliver with Confidence"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "enterprise-solutions/agile-project-management",
+    "status": 200,
+    "headings": [
+      "Agile Project Management",
+      "Our Agile Project Management Services",
+      "Agile Consulting and Transformation",
+      "Why Choose Our Agile Services?",
+      "NEED A CONSULTATION?"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "enterprise-solutions/cybersecurity",
+    "status": 200,
+    "headings": [
+      "Cybersecurity",
+      "Our Cybersecurity Services",
+      "Cybersecurity Consulting and Transformation",
+      "The FixelCloud Advantage",
+      "Essential Cybersecurity Practices",
+      "We are Trusted 15+ Countries Worldwide",
+      "Protect What Matters Most"
+    ],
+    "cards": 0,
+    "tabs": [
+      "Strong Passwords",
+      "Backup Regularly"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "enterprise-solutions/business-process-outsourcing",
+    "status": 200,
+    "headings": [
+      "Business Process Outsourcing",
+      "Hire a BPO Professional from Fixelcloud",
+      "Precision, Performance, Progress",
+      "Why Choose Fixelcloud?",
+      "Employee Training & Skill Development",
+      "We are Trusted 15+ Countries Worldwide",
+      "Focus on Growth , We’ll Handle the Rest"
+    ],
+    "cards": 0,
+    "tabs": [
+      "Skilled Experts",
+      "Cost-Effective",
+      "Secure"
+    ],
+    "buttons": [
+      "Boost Project Success",
+      "Contact Us"
+    ],
+    "images": 2,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries",
+    "status": 200,
+    "headings": [
+      "Industries",
+      "We Offer a Wide Variety of Industries",
+      "Ecommerce The Future of Online Shopping",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Free Quote",
+      "Contact Us"
+    ],
+    "images": 3,
+    "iconBoxes": 10,
+    "empty": false
+  },
+  {
+    "slug": "industries/retail",
+    "status": 200,
+    "headings": [
+      "Retail",
+      "What We Offer",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries/healthcare",
+    "status": 200,
+    "headings": [
+      "Healthcare",
+      "What We Offer",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries/education",
+    "status": 200,
+    "headings": [
+      "Education",
+      "What We Offer",
+      "Transforming Education Through Technology",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries/fintech",
+    "status": 200,
+    "headings": [
+      "Fintech",
+      "What We Offer",
+      "Transforming Education Through Technology",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries/telecommunication",
+    "status": 200,
+    "headings": [
+      "Telecommunication",
+      "What We Offer",
+      "Transforming Education Through Technology",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "industries/media-and-entertainment",
+    "status": 200,
+    "headings": [
+      "Media and Entertainment",
+      "What We Offer",
+      "Transforming Education Through Technology",
+      "NEED A CONSULTATION?",
+      "Our Other Industries"
+    ],
+    "cards": 3,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "ecommerce",
+    "status": 200,
+    "headings": [
+      "E-commerce"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "ecommerce/ecommerce-integration-service",
+    "status": 200,
+    "headings": [
+      "E-commerce Integration Service",
+      "What We Offer",
+      "Top E-commerce Integration Tools We Use",
+      "Why Choosing Our E-commerce Integration Services?",
+      "Sell Smarter, Not Harder.",
+      "Our Other Ecommerce Services"
+    ],
+    "cards": 2,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 8,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "ecommerce/ecommerce-design",
+    "status": 200,
+    "headings": [
+      "E-commerce Design",
+      "What We Offer",
+      "Technologies We Use Our E-commerce Design",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?",
+      "Our Other Ecommerce Services"
+    ],
+    "cards": 2,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 8,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "ecommerce/ecommerce-app-development",
+    "status": 200,
+    "headings": [
+      "E-commerce App Development",
+      "What We Offer",
+      "Technologies We Use For Our E-commerce App Development",
+      "Why Choosing Us?",
+      "NEED A CONSULTATION?",
+      "Our Other Ecommerce Services"
+    ],
+    "cards": 2,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 8,
+    "iconBoxes": 4,
+    "empty": false
+  },
+  {
+    "slug": "about-us",
+    "status": 200,
+    "headings": [
+      "About us",
+      "Improve and Innovate with the Tech Trends",
+      "What We Actually Do",
+      "Improve and Innovate with the Tech Trends"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 11,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "contacts",
+    "status": 200,
+    "headings": [
+      "Contact us"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "privacy-policy",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "faqs",
+    "status": 200,
+    "headings": [
+      "Read Most Frequent Questions",
+      "Let's Build Your Website!",
+      "Our Support Team will Always Assist You 24/7"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 9,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "our-team",
+    "status": 200,
+    "headings": [
+      "Meet the Teem of Innovators!",
+      "Our Leadership Team",
+      "Let's Build Your Website!",
+      "We are Trusted 15+ Countries Worldwide"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 12,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "why-choose-us",
+    "status": 200,
+    "headings": [
+      "Your Partner for Software Innovation",
+      "We Offer a Wide Variety of IT Services",
+      "Introduce Our Projects",
+      "We Deliver Solution with the Goal of Trusting Relationships",
+      "Read Our Latest Blogs"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "All News"
+    ],
+    "images": 6,
+    "iconBoxes": 10,
+    "empty": false
+  },
+  {
+    "slug": "finhub",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "salesportal",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "ai-messaging-solutions",
+    "status": 200,
+    "headings": [
+      "Business-Ready AI Messaging Solutions",
+      "Business-Ready AI Messaging Solutions",
+      "Engage. Automate. Grow.",
+      "What Are AI Messenger Bots?",
+      "Who Is It For?",
+      "How Does It Work?",
+      "How Does It Work?",
+      "Why Choose AI Bots for Your Business?",
+      "Ready to Build Your Bot?",
+      "Ready to Build Your Bot?",
+      "Frequently Asked Questions",
+      "How do these bots improve customer service?",
+      "Can the bots handle bookings and reminders?",
+      "Is my customer data secure?",
+      "How long does it take to launch a bot?"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Get Started",
+      "Get Started",
+      "Get Your Bot Now",
+      "Let’s Build Your AI Bot",
+      "Talk to Our Team",
+      "Contact Us",
+      "Contact Us"
+    ],
+    "images": 10,
+    "iconBoxes": 12,
+    "empty": false
+  },
+  {
+    "slug": "ai-chatbot-integrations",
+    "status": 200,
+    "headings": [
+      "Profitable AI Chatbot Integrations",
+      "Customer Support Automation",
+      "Sales & Lead Generation Bots",
+      "AI Virtual Assistants",
+      "E-commerce AI Concierge",
+      "AI Messenger Bots",
+      "Why This Generates Weekly Income",
+      "Engage Customers 24/7 with Smart Conversations"
+    ],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [
+      "Contact Us"
+    ],
+    "images": 1,
+    "iconBoxes": 0,
+    "empty": false
+  },
+  {
+    "slug": "portfolio/bellemar",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/tlc-pr",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/hanalei-colony-resort",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/aloh-lights-to-digital-life",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/technology-design",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/healthcare",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/insurance",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/saas",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  },
+  {
+    "slug": "portfolio/us-bank-finance",
+    "status": 200,
+    "headings": [],
+    "cards": 0,
+    "tabs": [],
+    "buttons": [],
+    "images": 0,
+    "iconBoxes": 0,
+    "empty": true
+  }
+]

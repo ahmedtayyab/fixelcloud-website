@@ -1,11 +1,27 @@
 import { media } from "../config/site";
 import { teamMembers } from "../data/home";
-import { ConsultationBand } from "../components/sections/ConsultationBand";
+import { TestimonialsSection } from "../components/sections/TestimonialsSection";
+import { Button } from "../components/ui/Button";
 import { Container } from "../components/ui/Container";
 import { PageHero } from "../components/ui/PageHero";
 import { Reveal } from "../components/ui/Reveal";
 import { SectionTitle } from "../components/ui/SectionTitle";
 import { usePageMeta } from "../hooks/usePageMeta";
+
+const teamQuotes = [
+  {
+    name: "Moonkle LTD",
+    role: "Client of Company",
+    quote:
+      "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!",
+  },
+  {
+    name: "SoftTech",
+    role: "Manager of Company",
+    quote:
+      "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!",
+  },
+];
 
 export function TeamPage() {
   usePageMeta("Our team", "Leadership roles published on the Fixelcloud team page.");
@@ -44,7 +60,16 @@ export function TeamPage() {
           </ul>
         </Container>
       </section>
-      <ConsultationBand />
+      <section>
+        <Container className="py-16 text-center md:py-section">
+          <p className="eyebrow text-brand">// We Carry more Than Just Good Coding Skills</p>
+          <h2 className="heading-section mt-3">Let&apos;s Build Your Website!</h2>
+          <Button href="/contacts" className="mt-8">
+            Contact us
+          </Button>
+        </Container>
+      </section>
+      <TestimonialsSection eyebrow="// our clients" quotes={teamQuotes} />
     </>
   );
 }
