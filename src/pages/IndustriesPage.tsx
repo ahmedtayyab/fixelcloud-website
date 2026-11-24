@@ -45,13 +45,13 @@ export function IndustriesPage() {
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {industryLinks.map((industry, index) => (
-              <li key={industry.href}>
+              <li key={industry.href} className="min-w-0">
                 <Reveal delay={(index % 3) * 0.06} className="h-full">
-                  <article className="lift flex h-full gap-4 border border-line bg-white p-7">
+                  <article className="lift flex h-full min-w-0 gap-4 border border-line bg-white p-5 sm:p-7">
                   <span className="w-12 shrink-0 font-display text-[28px] leading-8 font-extrabold text-brand">
                     {String(index + 1).padStart(2, "0")}.
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <h2 className="heading-card">
                       <Link className="transition-colors hover:text-brand" to={industry.href}>
                         {industry.label}

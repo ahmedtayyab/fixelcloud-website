@@ -84,11 +84,11 @@ export function AboutPage() {
           <div>
             <p className="eyebrow text-brand">// Experience. Execution. Excellence.</p>
             <h2 className="heading-section mt-3 text-white">What We Actually Do</h2>
-            <ul className="mt-6 flex gap-4" aria-label="Technologies">
+            <ul className="mt-6 flex flex-wrap gap-3" aria-label="Technologies">
               {technologies.map((tech) => (
                 <li
                   key={tech.label}
-                  className="flex h-[70px] w-[70px] items-center justify-center border border-white/25 text-brand"
+                  className="flex h-14 w-14 items-center justify-center border border-white/25 text-brand sm:h-[70px] sm:w-[70px]"
                   title={tech.label}
                 >
                   <Flaticon name={tech.icon} className="text-[34px]" />

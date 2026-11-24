@@ -18,7 +18,7 @@ export function CookieNotice() {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-[60] w-[min(440px,calc(100vw-2rem))] border border-line bg-white p-6 shadow-card">
+    <div className="fixed right-4 bottom-4 left-4 z-[60] max-w-[440px] border border-line bg-white p-6 shadow-card sm:right-auto">
       <h2 className="text-2xl font-extrabold text-ink">We value your privacy</h2>
       <p className="mt-3 text-base leading-7">
         We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our

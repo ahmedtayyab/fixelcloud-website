@@ -14,13 +14,17 @@ React frontend for the Fixelcloud website. It keeps the existing brand, page map
 
 ```bash
 npm install
+npx playwright install chromium
 npm run dev
 npm run typecheck
+npm run test:e2e
 npm run build
 npm run preview
 ```
 
-`npm run typecheck` is the lint step. It runs the TypeScript compiler with `strict` and unused-symbol checks.
+`npm run typecheck` is the lint step. It runs the TypeScript compiler with `strict` and unused-symbol checks. There is no separate ESLint script.
+
+`npm run test:e2e` opens the dev server and checks every content route at 320px, 375px, and 1440px for a single heading, a missing-page message, and horizontal overflow. It also checks the unknown-route message, contact-form validation, the mobile menu, and legacy URL redirects.
 
 ## Environment
 
@@ -86,12 +90,22 @@ Images are the original WordPress uploads, converted to WebP in `public/media`. 
 
 `Reveal` uses Motion and only runs when the section enters the viewport. Hover, menus, and the logo marquee use CSS. `prefers-reduced-motion` shortens both.
 
+## Deployment
+
+The site is a single-page app. The host must serve `index.html` for unknown paths so a refresh on `/services/website-development` still loads the app. `vercel.json` already rewrites every path to `index.html`.
+
+`public/robots.txt` and `public/sitemap.xml` use `https://fixelcloud.com`. Change that host if this build is served from another domain.
+
+Copy `.env.example` to `.env` and set `VITE_CONTACT_ENDPOINT` before building if form posts should reach a server. The value is public in the browser bundle. Do not put a secret there.
+
+After deploy, open `/`, `/contacts`, and one nested URL directly, then refresh each one.
+
 ## Known limitations
 
 - Forms need `VITE_CONTACT_ENDPOINT` for a server submission. Without it, they use `mailto`.
 - WordPress comments, WooCommerce cart/shop pages, and theme demo portfolio layouts are not part of this frontend.
 - Voxora stays an external product link: `https://voxora.fixelcloud.com/`.
 - The leadership names on `/our-team` are the names published on the current site. Replace them in `src/data/home.ts` when the real roster is confirmed.
-- FAQ answers were rewritten. The previous page repeated unrelated placeholder paragraphs.
+- FAQ answers stay the published placeholder paragraphs. They repeat across questions because that is what the original page published.
 - The contact map uses the Google Maps key published on fixelcloud.com. If that key is limited to the live domain, the page lists the Lahore, Dubai, and Houston offices instead.
 - FinHub, SalesPortal, and AI Messaging keep the published marketing copy. Sample numbers from the original app previews are not repeated as page text.

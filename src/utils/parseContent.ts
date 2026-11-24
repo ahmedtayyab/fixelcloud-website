@@ -151,6 +151,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       !next.startsWith("//") &&
       !next.startsWith("-") &&
       !ACTIONS.has(next.toLowerCase()) &&
+      !/(?:https?:\/\/|www\.)/i.test(next) &&
       next.length < 52 &&
       !/[.!?]$/.test(next) &&
       heading[2] &&

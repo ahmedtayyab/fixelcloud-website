@@ -297,12 +297,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-[0_1px_0_var(--color-line)]">
       <div className="bg-topbar text-white">
-        <div className="flex h-[41px] items-center justify-between px-5 text-[13px] xl:px-[30px]">
-          <a className="inline-flex items-center gap-2 transition-colors hover:text-brand" href={`mailto:${site.email}`}>
-            <SvgIcon name="envelope" className="h-3 w-3" />
-            {site.email}
+        <div className="flex h-[41px] items-center justify-between gap-3 px-4 text-[13px] sm:px-5 xl:px-[30px]">
+          <a className="inline-flex min-w-0 items-center gap-2 transition-colors hover:text-brand" href={`mailto:${site.email}`}>
+            <SvgIcon name="envelope" className="h-3 w-3 shrink-0" />
+            <span className="truncate">{site.email}</span>
           </a>
-          <ul className="flex items-center gap-5">
+          <ul className="flex shrink-0 items-center gap-3 sm:gap-5">
             {topbarSocials.map((item) => (
               <li key={item.id}>
                 <a
