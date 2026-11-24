@@ -1,0 +1,452 @@
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { site } from "../../config/site";
+import { ecommerceGroup, industryLinks, mainNav, productLinks, serviceGroups } from "../../data/navigation";
+import { Collapse } from "../ui/Collapse";
+import { Flaticon, SvgIcon } from "../ui/Icons";
+
+const topbarSocials = (["facebook", "linkedin", "instagram", "dribbble"] as const).map(
+  (id) => site.socials.find((item) => item.id === id)!,
+);
+const usPhone = site.phones[1];
+
+function MenuLink({
+  href,
+  children,
+  external,
+  onPick,
+}: {
+  href: string;
+  children: string;
+  external?: boolean;
+  onPick: () => void;
+}) {
+  const className = "block py-1.5 text-[15px] leading-7 font-medium text-muted transition-colors hover:text-brand";
+  if (external) {
+    return (
+      <a className={className} href={href} target="_blank" rel="noreferrer" onClick={onPick}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link className={className} to={href} onClick={onPick}>
+      {children}
+    </Link>
+  );
+}
+
+function MenuHeading({ href, children, onPick }: { href: string; children: string; onPick: () => void }) {
+  return (
+    <Link
+      className="font-display text-base font-extrabold tracking-wide text-ink uppercase transition-colors hover:text-brand"
+      to={href}
+      onClick={onPick}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function ServicesMenu({ onPick }: { onPick: () => void }) {
+  return (
+    <div className="grid grid-cols-3 gap-x-10 gap-y-8">
+      {serviceGroups.map((group) => (
+        <div key={group.href}>
+          <MenuHeading href={group.href} onPick={onPick}>
+            {group.label}
+          </MenuHeading>
+          <ul className="mt-4 border-t border-line pt-3">
+            {group.items.map((item) => (
+              <li key={item.href}>
+                <MenuLink href={item.href} onPick={onPick}>
+                  {item.label}
+                </MenuLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function IndustriesMenu({ onPick }: { onPick: () => void }) {
+  return (
+    <div className="grid grid-cols-2 gap-10">
+      <div>
+        <MenuHeading href="/industries" onPick={onPick}>
+          All industries
+        </MenuHeading>
+        <ul className="mt-4 border-t border-line pt-3">
+          {industryLinks.map((item) => (
+            <li key={item.href}>
+              <MenuLink href={item.href} onPick={onPick}>
+                {item.label}
+              </MenuLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <MenuHeading href={ecommerceGroup.href} onPick={onPick}>
+          {ecommerceGroup.label}
+        </MenuHeading>
+        <ul className="mt-4 border-t border-line pt-3">
+          {ecommerceGroup.items.map((item) => (
+            <li key={item.href}>
+              <MenuLink href={item.href} onPick={onPick}>
+                {item.label}
+              </MenuLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function ProductsMenu({ onPick }: { onPick: () => void }) {
+  return (
+    <ul>
+      {productLinks.map((item) => (
+        <li key={item.label}>
+          <MenuLink href={item.href} external={item.external} onPick={onPick}>
+            {item.label}
+          </MenuLink>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function DesktopItem({
+  label,
+  href,
+  panel,
+  panelClass,
+}: {
+  label: string;
+  href: string;
+  panel?: (onPick: () => void) => ReactNode;
+  panelClass?: string;
+}) {
+  const [hover, setHover] = useState(false);
+  const [focus, setFocus] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const hoverRef = useRef(false);
+  const open = (hover || focus) && !dismissed;
+  const dismiss = () => setDismissed(true);
+
+  return (
+    <div
+      className={panelClass ? "relative" : "static"}
+      onMouseOver={() => {
+        hoverRef.current = true;
+        setHover(true);
+      }}
+      onMouseOut={(event) => {
+        if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
+        hoverRef.current = false;
+        setHover(false);
+        setDismissed(false);
+      }}
+      onFocus={() => {
+        if (!dismissed) setFocus(true);
+      }}
+      onBlur={(event) => {
+        if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
+        setFocus(false);
+        if (!hoverRef.current) setDismissed(false);
+      }}
+    >
+      <NavLink
+        className={({ isActive }) =>
+          `relative inline-flex items-center gap-1.5 py-[45px] text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-brand after:transition-opacity ${isActive ? "after:opacity-100" : "after:opacity-0"}`
+        }
+        to={href}
+        onClick={dismiss}
+      >
+        {label}
+        {panel ? (
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 12 8"
+            className={`h-1.5 w-2 fill-none stroke-current text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+            strokeWidth="1.6"
+          >
+            <path d="M1 1.5 6 6.5 11 1.5" />
+          </svg>
+        ) : null}
+      </NavLink>
+      {panel ? (
+        <div
+          className={`absolute top-full z-40 border-t border-line bg-white shadow-menu transition duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"} ${panelClass ?? "inset-x-0 px-[max(30px,calc((100%-1186px)/2))] py-10"}`}
+          inert={open ? undefined : true}
+        >
+          {panel(dismiss)}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
+  const [open, setOpen] = useState<string | null>(null);
+
+  const sections = [
+    {
+      id: "Services",
+      links: serviceGroups.flatMap((group) => [{ label: group.label, href: group.href, heading: true }, ...group.items]),
+    },
+    {
+      id: "Industries",
+      links: [
+        { label: "All industries", href: "/industries", heading: true },
+        ...industryLinks,
+        { label: ecommerceGroup.label, href: ecommerceGroup.href, heading: true },
+        ...ecommerceGroup.items,
+      ],
+    },
+    { id: "Our Products", links: productLinks },
+  ];
+
+  return (
+    <div>
+      {sections.map((section) => (
+        <div key={section.id} className="border-b border-line">
+          <button
+            className="flex w-full items-center justify-between py-3.5 text-left text-base font-bold text-nav"
+            type="button"
+            aria-expanded={open === section.id}
+            onClick={() => setOpen(open === section.id ? null : section.id)}
+          >
+            {section.id}
+            <span aria-hidden="true" className="text-xl leading-none text-muted">
+              {open === section.id ? "−" : "+"}
+            </span>
+          </button>
+          <Collapse open={open === section.id}>
+            <ul className="pb-3 pl-3">
+              {section.links.map((link) => {
+                const heading = "heading" in link && link.heading;
+                const className = heading
+                  ? "mt-3 block py-1.5 font-display text-sm font-extrabold tracking-wide text-ink uppercase"
+                  : "block py-2 text-[15px] font-medium text-muted transition-colors hover:text-brand";
+                return (
+                  <li key={`${link.label}-${link.href}`}>
+                    {"external" in link && link.external ? (
+                      <a className={className} href={link.href} target="_blank" rel="noreferrer" onClick={onNavigate}>
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link className={className} to={link.href} onClick={onNavigate}>
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </Collapse>
+        </div>
+      ))}
+      {mainNav
+        .filter((item) => item.kind === "link")
+        .map((item) => (
+          <Link
+            key={item.href}
+            className="block border-b border-line py-3.5 text-base font-bold text-nav"
+            to={item.href}
+            onClick={onNavigate}
+          >
+            {item.label}
+          </Link>
+        ))}
+    </div>
+  );
+}
+
+export function Header() {
+  const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const location = useLocation();
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    setOpen(false);
+    setSearchOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white shadow-[0_1px_0_var(--color-line)]">
+      <div className="bg-topbar text-white">
+        <div className="flex h-[41px] items-center justify-between px-5 text-[13px] xl:px-[30px]">
+          <a className="inline-flex items-center gap-2 transition-colors hover:text-brand" href={`mailto:${site.email}`}>
+            <SvgIcon name="envelope" className="h-3 w-3" />
+            {site.email}
+          </a>
+          <ul className="flex items-center gap-5">
+            {topbarSocials.map((item) => (
+              <li key={item.id}>
+                <a
+                  className="flex h-6 w-6 items-center justify-center transition-colors hover:text-brand"
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.label}
+                >
+                  <SvgIcon name={item.id} className="h-3 w-3" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="relative flex h-[76px] items-center justify-between gap-6 px-5 xl:h-auto xl:px-[30px]">
+        <Link to="/" aria-label="Fixelcloud home" className="shrink-0">
+          <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="h-9 w-auto xl:h-[47px]" />
+        </Link>
+
+        <nav className="hidden items-center gap-7 xl:mr-auto xl:ml-8 xl:flex 2xl:ml-12" aria-label="Primary">
+          <DesktopItem label="Services" href="/services" panel={(onPick) => <ServicesMenu onPick={onPick} />} />
+          <DesktopItem
+            label="Industries"
+            href="/industries"
+            panel={(onPick) => <IndustriesMenu onPick={onPick} />}
+            panelClass="left-0 w-[560px] p-8"
+          />
+          <DesktopItem label="About Us" href="/about-us" />
+          <DesktopItem label="Insights" href="/blog" />
+          <DesktopItem label="Contacts" href="/contacts" />
+          <DesktopItem
+            label="Our Products"
+            href="/finhub"
+            panel={(onPick) => <ProductsMenu onPick={onPick} />}
+            panelClass="left-0 w-60 px-6 py-5"
+          />
+        </nav>
+
+        <div className="hidden shrink-0 items-center gap-6 xl:flex">
+          <a
+            className="inline-flex items-center gap-3 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
+            href={usPhone.href}
+          >
+            <Flaticon name="phone" className="text-[22px] text-brand" />
+            {usPhone.label}
+          </a>
+          <Link
+            className="press bg-brand px-4 py-4 text-[15px] leading-5 font-bold tracking-wide whitespace-nowrap text-white uppercase hover:bg-brand-dark"
+            to="/estimate"
+          >
+            Estimate Project
+          </Link>
+          <button
+            className="flex h-10 w-10 items-center justify-center text-nav transition-colors hover:text-brand"
+            type="button"
+            aria-label={searchOpen ? "Close search" : "Open search"}
+            aria-expanded={searchOpen}
+            aria-controls="site-search"
+            onClick={() => setSearchOpen((value) => !value)}
+          >
+            <SearchIcon />
+          </button>
+        </div>
+
+        <button
+          className="inline-flex h-11 w-11 items-center justify-center text-nav xl:hidden"
+          type="button"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="2">
+            {open ? <path d="M5 5l14 14M19 5 5 19" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
+          </svg>
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {searchOpen ? (
+          <motion.div
+            id="site-search"
+            className="overflow-hidden border-t border-line bg-canvas"
+            initial={reduce ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={reduce ? undefined : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <form action="/search" className="mx-auto flex max-w-[1226px] gap-2 px-5 py-4">
+              <label className="sr-only" htmlFor="header-search">
+                Search the site
+              </label>
+              <input
+                id="header-search"
+                className="w-full border border-line bg-white px-4 py-3 text-base text-ink transition-colors focus:border-brand"
+                name="q"
+                placeholder="Search"
+                autoFocus
+              />
+              <button className="press bg-brand px-6 text-[15px] font-bold text-white uppercase hover:bg-brand-dark" type="submit">
+                Search
+              </button>
+            </form>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            id="mobile-nav"
+            className="max-h-[calc(100dvh-117px)] overflow-y-auto border-t border-line bg-white px-5 pb-6 xl:hidden"
+            initial={reduce ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={reduce ? undefined : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <MobileGroups onNavigate={() => setOpen(false)} />
+            <form action="/search" className="mt-5 flex gap-2">
+              <label className="sr-only" htmlFor="mobile-search">
+                Search
+              </label>
+              <input id="mobile-search" className="w-full border border-line bg-canvas px-3 py-3 text-base" name="q" placeholder="Search" />
+              <button className="press bg-nav px-5 text-sm font-bold text-white uppercase" type="submit">
+                Go
+              </button>
+            </form>
+            <a className="mt-5 flex items-center gap-3 font-bold text-nav transition-colors hover:text-brand" href={usPhone.href}>
+              <Flaticon name="phone" className="text-xl text-brand" />
+              {usPhone.label}
+            </a>
+            <Link
+              className="press mt-4 block bg-brand px-4 py-4 text-center text-[15px] font-bold text-white uppercase hover:bg-brand-dark"
+              to="/estimate"
+            >
+              Estimate Project
+            </Link>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </header>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="2">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-4-4" />
+    </svg>
+  );
+}

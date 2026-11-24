@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+/*
+  Design tokens, measured from fixelcloud.com at 1440px.
+  Tailwind v4 exposes these as utilities: bg-brand, text-muted, font-display, py-section, and so on.
+*/
+@theme {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #15a970;
+  --color-brand-dark: #0f8a5b;
+  --color-topbar: #0b3427;
+  --color-night: #0b1a15;
+  --color-ink: #1b1d21;
+  --color-nav: #1a1b1e;
+  --color-muted: #6d6d6d;
+  --color-line: #e6e8eb;
+  --color-canvas: #f8f8f8;
+  --color-mist: #f2f2f2;
+  --color-field: #f1f1f1;
+
+  --spacing-section: 90px;
+  --spacing-section-lg: 130px;
+
+  --shadow-menu: 0 18px 48px rgba(15, 32, 24, 0.12);
+  --shadow-card: 0 12px 32px rgba(15, 32, 24, 0.1);
+  --shadow-card-rest: 0 1px 0 rgba(15, 32, 24, 0.04);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@font-face {
+  font-family: "Flaticon";
+  src:
+    url("../assets/fonts/Flaticon.woff2") format("woff2"),
+    url("../assets/fonts/Flaticon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 17px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--color-ink);
+    line-height: 1.2;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+}
+
+/* Type scale. Desktop sizes sit in the original range; clamp() carries them down without a second jump. */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 4vw, 60px);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  .heading-section {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 2.7vw, 42px);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+  }
+
+  .heading-card {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 1.35vw, 22px);
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .heading-shout {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.08;
+    text-transform: uppercase;
+  }
+
+  /* Shared press and lift. Transform is cleared when motion is reduced, below. */
+  .press {
+    transition:
+      transform 160ms var(--ease-out),
+      background-color 180ms var(--ease-out),
+      color 180ms var(--ease-out),
+      border-color 180ms var(--ease-out),
+      box-shadow 180ms var(--ease-out);
+  }
+
+  .press:active {
+    transform: scale(0.98);
+  }
+
+  .lift {
+    transition:
+      transform 220ms var(--ease-out),
+      box-shadow 220ms var(--ease-out),
+      border-color 220ms var(--ease-out);
+  }
+
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .lift:active {
+    transform: translateY(-1px);
+  }
+}
+
+.flaticon {
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: never;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .press:hover,
+  .press:active,
+  .lift:hover,
+  .lift:active {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}

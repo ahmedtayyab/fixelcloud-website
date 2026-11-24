@@ -1,0 +1,1949 @@
+{
+ "pages": {
+  "services/website-development": {
+   "projects": true,
+   "sections": [
+    {
+     "heading": "We Provide Best Website Development",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/website.webp",
+      "alt": "website developer",
+      "width": 375,
+      "height": 676
+     }
+    },
+    {
+     "heading": "We Organize Our Production Process",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/medium-shot-people-working-with-computers-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    },
+    {
+     "heading": "Custom Websites Built for Performance.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled-1.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "services/mobile-development": {
+   "projects": true,
+   "sections": [
+    {
+     "heading": "App Development Services",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/apple-w.webp",
+      "alt": "app development",
+      "width": 710,
+      "height": 697
+     }
+    },
+    {
+     "heading": "Our App Development Approach",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/app-watch-1.webp",
+      "alt": "app development",
+      "width": 371,
+      "height": 567
+     }
+    },
+    {
+     "heading": "Mobile Apps That Users Love.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled-1.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "services/mean-mern-development": {
+   "projects": true,
+   "sections": [
+    {
+     "heading": "MEAN / MERN Development",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/people-coworking-office-1024x1024.webp",
+      "alt": "MEAN/MERN development",
+      "width": 1024,
+      "height": 1024
+     }
+    },
+    {
+     "heading": "We Organize Our Production Process",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/medium-shot-people-working-with-computers-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    },
+    {
+     "heading": "Full-Stack Power, Front to Back.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled-1.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "services/cloud-strategy": {
+   "projects": true,
+   "sections": [
+    {
+     "heading": "Cloud Strategy Services",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/website-hosting-concept-with-woman-working-computer-1024x681.webp",
+      "alt": "cloud strategy",
+      "width": 1024,
+      "height": 681
+     }
+    },
+    {
+     "heading": "Cloud Strategy Benefits",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/cloud.webp",
+      "alt": "cloud services",
+      "width": 626,
+      "height": 626
+     }
+    }
+   ]
+  },
+  "cooperative-staff-model/staff-augmentation": {
+   "gallery": [
+    {
+     "src": "/media/2024/12/Frame-1000002285-2.webp",
+     "alt": "staff augmentation process",
+     "width": 1094,
+     "height": 193
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Our staff augmentation expertise:",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/young-busines-training-discussion-group-1024x683.webp",
+      "alt": "staff augmentation",
+      "width": 1024,
+      "height": 683
+     }
+    }
+   ]
+  },
+  "cooperative-staff-model/dedicated-teams": {
+   "sections": [
+    {
+     "heading": "Hire dedicated remote teams across a range of service verticals",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/woman-selecting-pictures-people-1024x683.webp",
+      "alt": "dedicated teams",
+      "width": 1024,
+      "height": 683
+     }
+    }
+   ]
+  },
+  "cooperative-staff-model/digital-acceleration": {
+   "sections": [
+    {
+     "heading": "Our Digital Acceleration expertise:",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/family-buying-car-dealer-1024x683.webp",
+      "alt": "digital acceleration",
+      "width": 1024,
+      "height": 683
+     }
+    }
+   ]
+  },
+  "social-media-marketing/social-media-management": {
+   "lead": {
+    "src": "/media/2025/05/Call_to_Actions1.webp",
+    "alt": "",
+    "width": 545,
+    "height": 536
+   }
+  },
+  "social-media-marketing/social-media-advertising": {
+   "lead": {
+    "src": "/media/2025/05/Call_to_Actions1.webp",
+    "alt": "",
+    "width": 545,
+    "height": 536
+   }
+  },
+  "social-media-marketing/content-marketing": {
+   "lead": {
+    "src": "/media/2025/05/Call_to_Actions1.webp",
+    "alt": "",
+    "width": 545,
+    "height": 536
+   }
+  },
+  "generative-ai-and-data/artificial-intelligence": {
+   "sections": [
+    {
+     "heading": "Benefits of Generative AI",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/young-lady-sitting-desk-wearing-vr-glasses-while-looking-aside-high-quality-photo-1024x683.webp",
+      "alt": "artificial intelligence",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "AI Chatbot Integrations",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/opened-ai-chat-laptop-1-1024x683.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Smarter Solutions Start Here.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "generative-ai-and-data/machine-learning": {
+   "sections": [
+    {
+     "heading": "Benefits of Generative ML",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/meeting-developers-1024x683.webp",
+      "alt": "machine learning",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Let’s Build Intelligent Systems",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "generative-ai-and-data/data-engineering": {
+   "sections": [
+    {
+     "heading": "Benefits of Data Engineering",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/workers-it-company-working-computer-1024x683.webp",
+      "alt": "data engineering",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Data You Can Trust, Infrastructure That Scales.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "design-ideation/product-design": {
+   "logos": [
+    {
+     "src": "/media/2024/05/pngwing.com-1-1.webp",
+     "alt": "Figma",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-3-150x150.webp",
+     "alt": "adobe xd",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-5-1024x1024.webp",
+     "alt": "sketch",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-7.webp",
+     "alt": "zaplin",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-6-1024x1024.webp",
+     "alt": "invision",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-8.webp",
+     "alt": "design logo",
+     "width": 512,
+     "height": 512
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-9-1-720x720.webp",
+     "alt": "design logo",
+     "width": 720,
+     "height": 720
+    },
+    {
+     "src": "/media/2024/05/rpicon-1-150x150.webp",
+     "alt": "axure rp",
+     "width": 150,
+     "height": 150
+    }
+   ],
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/kiwi.webp",
+      "alt": "product design",
+      "width": 668,
+      "height": 670
+     }
+    },
+    {
+     "heading": "Intuitive & Scalable Digital Products",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/butterfly-pea-flower-hair-care-shampoo-packaging-design-template_249011-145.webp",
+      "alt": "shampoo sample product",
+      "width": 626,
+      "height": 626
+     }
+    },
+    {
+     "heading": "Intuitive & Scalable Digital Products",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/deodorant-bottles-realistic-poster-different-shapes-with-advertising-48-hour-dry-protect-tenderness-cotton-realistic_1284-26914.webp",
+      "alt": "deodorant sample product",
+      "width": 740,
+      "height": 796
+     }
+    },
+    {
+     "heading": "Intuitive & Scalable Digital Products",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/Screenshot-2025-02-19-180621.webp",
+      "alt": "sunblock sample product",
+      "width": 597,
+      "height": 546
+     }
+    },
+    {
+     "heading": "Intuitive & Scalable Digital Products",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/Screenshot-2025-02-19-180551.webp",
+      "alt": "juice sample product",
+      "width": 672,
+      "height": 618
+     }
+    },
+    {
+     "heading": "From Idea to Experience.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "design-ideation/ui-ux-design": {
+   "logos": [
+    {
+     "src": "/media/2024/05/pngwing.com-1-1.webp",
+     "alt": "Figma",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-3-150x150.webp",
+     "alt": "adobe xd",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-5-1024x1024.webp",
+     "alt": "sketch",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-7.webp",
+     "alt": "zaplin",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-6-1024x1024.webp",
+     "alt": "invision",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-8.webp",
+     "alt": "design logo",
+     "width": 512,
+     "height": 512
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-9-1-720x720.webp",
+     "alt": "design logo",
+     "width": 720,
+     "height": 720
+    },
+    {
+     "src": "/media/2024/05/rpicon-1-150x150.webp",
+     "alt": "axure rp",
+     "width": 150,
+     "height": 150
+    }
+   ],
+   "gallery": [
+    {
+     "src": "/media/2024/05/Group-1000002289-1.webp",
+     "alt": "",
+     "width": 347,
+     "height": 348
+    },
+    {
+     "src": "/media/2024/05/5z-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/4r-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/6a-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/3h-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/10r-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/9f-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/2q-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/7a-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/8w-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/1h-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Beautiful Interfaces, Seamless Experiences.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "design-ideation/design-system": {
+   "logos": [
+    {
+     "src": "/media/2024/05/pngwing.com-1-1.webp",
+     "alt": "Figma",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-3-150x150.webp",
+     "alt": "adobe xd",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-5-1024x1024.webp",
+     "alt": "sketch",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-7.webp",
+     "alt": "zaplin",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-6-1024x1024.webp",
+     "alt": "invision",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-8.webp",
+     "alt": "design logo",
+     "width": 512,
+     "height": 512
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-9-1-720x720.webp",
+     "alt": "design logo",
+     "width": 720,
+     "height": 720
+    },
+    {
+     "src": "/media/2024/05/rpicon-1-150x150.webp",
+     "alt": "axure rp",
+     "width": 150,
+     "height": 150
+    }
+   ],
+   "sections": [
+    {
+     "heading": "The Foundation of Scalable Design",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/b9d9cdea-f16d-4b79-a058-b94bb47d9ec3.webp",
+      "alt": "design system",
+      "width": 1317,
+      "height": 873
+     }
+    },
+    {
+     "heading": "Consistency Meets Efficiency.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "ui-ux-design": {
+   "logos": [
+    {
+     "src": "/media/2024/05/pngwing.com-1-1.webp",
+     "alt": "Figma",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-3-150x150.webp",
+     "alt": "adobe xd",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-5-1024x1024.webp",
+     "alt": "sketch",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-7.webp",
+     "alt": "zaplin",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-6-1024x1024.webp",
+     "alt": "invision",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-8.webp",
+     "alt": "design logo",
+     "width": 512,
+     "height": 512
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-9-1-720x720.webp",
+     "alt": "design logo",
+     "width": 720,
+     "height": 720
+    },
+    {
+     "src": "/media/2024/05/rpicon-1-150x150.webp",
+     "alt": "axure rp",
+     "width": 150,
+     "height": 150
+    }
+   ],
+   "gallery": [
+    {
+     "src": "/media/2024/05/Group-1000002289-1.webp",
+     "alt": "",
+     "width": 347,
+     "height": 348
+    },
+    {
+     "src": "/media/2024/05/5z-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/4r-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/6a-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/3h-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/10r-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/9f-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/2q-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/7a-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/8w-min-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/1h-min-1-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Beautiful Interfaces, Seamless Experiences.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  },
+  "enterprise-solutions/quality-assurance": {
+   "sections": [
+    {
+     "heading": "Our QA engineers make your product flawless",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/colleagues-working-together-call-center-office-1024x681.webp",
+      "alt": "quality assurance",
+      "width": 1024,
+      "height": 681
+     }
+    }
+   ]
+  },
+  "enterprise-solutions/agile-project-management": {
+   "sections": [
+    {
+     "heading": "Our Agile Project Management Services",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/mentor-explaining-marketing-data-interns-1024x683.webp",
+      "alt": "agile project management",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "enterprise-solutions/cybersecurity": {
+   "sections": [
+    {
+     "heading": "Our Cybersecurity Services",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/criminal-hacking-system-unsuccessfully-1024x683.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Essential Cybersecurity Practices",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/malware-breaking-into-database-screen-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    }
+   ]
+  },
+  "enterprise-solutions/business-process-outsourcing": {
+   "sections": [
+    {
+     "heading": "Hire a BPO Professional from Fixelcloud",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/03/colleagues-with-headphones-working-call-center-office-1024x681.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 681
+     }
+    },
+    {
+     "heading": "Employee Training & Skill Development",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/03/financial-managers-working-report-1024x683.webp",
+      "alt": "No training cost",
+      "width": 1024,
+      "height": 683
+     }
+    }
+   ]
+  },
+  "industries": {
+   "sections": [
+    {
+     "heading": "Ecommerce The Future of Online Shopping",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/young-man-using-discount-coupon-his-smartphone-some-online-shopping-laptop-1024x683.webp",
+      "alt": "ecommerce",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Ecommerce The Future of Online Shopping",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/mobile-application-design-illustrator-creativity-concept-1024x716.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 716
+     }
+    },
+    {
+     "heading": "Ecommerce The Future of Online Shopping",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/marketing-creative-collage-with-phone-1024x662.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 662
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/retail": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/close-up-people-with-tablet-1024x683.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/healthcare": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/woman-with-skin-cancer-talking-with-doctor-1024x683.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/education": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/meeting-developers-1024x683.webp",
+      "alt": "machine learning",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/fintech": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/meeting-developers-1024x683.webp",
+      "alt": "machine learning",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/telecommunication": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/i-listen-you-what-kind-problem-you-have-young-people-working-call-center-new-deals-is-coming-1024x684.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 684
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "industries/media-and-entertainment": {
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/01/side-view-smiley-men-recording-podcast-1024x683.webp",
+      "alt": "",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "ecommerce/ecommerce-integration-service": {
+   "logos": [
+    {
+     "src": "/media/2024/12/pngegg-16.webp",
+     "alt": "",
+     "width": 500,
+     "height": 500
+    },
+    {
+     "src": "/media/2024/12/pngegg-17-e1733330136791.webp",
+     "alt": "",
+     "width": 298,
+     "height": 298
+    },
+    {
+     "src": "/media/2024/12/pngegg-27.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/12/pngegg-29-e1733335193575-150x150.webp",
+     "alt": "",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/12/pngegg-30.webp",
+     "alt": "",
+     "width": 1125,
+     "height": 1123
+    },
+    {
+     "src": "/media/2024/12/pngegg-12.webp",
+     "alt": "",
+     "width": 510,
+     "height": 510
+    },
+    {
+     "src": "/media/2024/12/pngegg-15.webp",
+     "alt": "",
+     "width": 512,
+     "height": 512
+    }
+   ],
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/elementor/thumbs/people-working-together-new-project-scaled-r45lqxa0f1xj4h0pt9d1axrgr31s4pl3scgy64wadk.webp",
+      "alt": "e-commerce integration services",
+      "width": 500,
+      "height": 500
+     }
+    },
+    {
+     "heading": "Sell Smarter, Not Harder.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled-1.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "ecommerce/ecommerce-design": {
+   "logos": [
+    {
+     "src": "/media/2024/05/rpicon-1-150x150.webp",
+     "alt": "axure rp",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-3-150x150.webp",
+     "alt": "adobe xd",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-7.webp",
+     "alt": "zaplin",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-6-1024x1024.webp",
+     "alt": "invision",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-9-720x720.webp",
+     "alt": "",
+     "width": 720,
+     "height": 720
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-8.webp",
+     "alt": "design logo",
+     "width": 512,
+     "height": 512
+    },
+    {
+     "src": "/media/2024/05/pngwing.com-5-1024x1024.webp",
+     "alt": "sketch",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/elementor/thumbs/elegant-cozy-office-lifestyle-1-qzm17us1imdznivthirw83x6663dreuo82t7r46t8o.webp",
+      "alt": "e-commerce design",
+      "width": 600,
+      "height": 500
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "ecommerce/ecommerce-app-development": {
+   "logos": [
+    {
+     "src": "/media/2025/01/pngegg-33.webp",
+     "alt": "JS node",
+     "width": 500,
+     "height": 500
+    },
+    {
+     "src": "/media/2025/01/pngegg-31.webp",
+     "alt": "react",
+     "width": 500,
+     "height": 500
+    },
+    {
+     "src": "/media/2025/01/pngegg-32-150x150.webp",
+     "alt": "angular",
+     "width": 150,
+     "height": 150
+    },
+    {
+     "src": "/media/2025/01/pngegg-34.webp",
+     "alt": "django",
+     "width": 550,
+     "height": 550
+    },
+    {
+     "src": "/media/2025/01/pngegg-35.webp",
+     "alt": "MongoDB",
+     "width": 600,
+     "height": 600
+    },
+    {
+     "src": "/media/2025/01/pngegg-37-1024x1024.webp",
+     "alt": "SQL",
+     "width": 1024,
+     "height": 1024
+    },
+    {
+     "src": "/media/2025/01/pngegg-38-150x150.webp",
+     "alt": "asure",
+     "width": 150,
+     "height": 150
+    }
+   ],
+   "sections": [
+    {
+     "heading": "What We Offer",
+     "kind": "image",
+     "image": {
+      "src": "/media/elementor/thumbs/group-people-looking-digital-tablet-with-social-media-icons-workplace-qzlwc6pv1f4ypn8f6qz8ngrkua6fty824aj2t0pb48.webp",
+      "alt": "e-commerce app development",
+      "width": 500,
+      "height": 500
+     }
+    },
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "about-us": {
+   "gallery": [
+    {
+     "src": "/media/2024/05/1.webp",
+     "alt": "1",
+     "width": 200,
+     "height": 54
+    },
+    {
+     "src": "/media/2024/05/2.webp",
+     "alt": "2",
+     "width": 200,
+     "height": 56
+    },
+    {
+     "src": "/media/2024/05/4.webp",
+     "alt": "4",
+     "width": 200,
+     "height": 54
+    },
+    {
+     "src": "/media/2024/05/5.webp",
+     "alt": "5",
+     "width": 200,
+     "height": 32
+    },
+    {
+     "src": "/media/2024/05/6.webp",
+     "alt": "6",
+     "width": 200,
+     "height": 43
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Improve and Innovate with the Tech Trends",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/image-box1.webp",
+      "alt": "fixelcloud",
+      "width": 730,
+      "height": 730
+     }
+    },
+    {
+     "heading": "Improve and Innovate with the Tech Trends",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/image-box2.webp",
+      "alt": "fixelcloud",
+      "width": 730,
+      "height": 730
+     }
+    },
+    {
+     "heading": "Improve and Innovate with the Tech Trends",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/image-box3.webp",
+      "alt": "fixelcloud",
+      "width": 730,
+      "height": 730
+     }
+    },
+    {
+     "heading": "Improve and Innovate with the Tech Trends",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/02/image-box4.webp",
+      "alt": "fixelcloud",
+      "width": 730,
+      "height": 730
+     }
+    },
+    {
+     "heading": "What We Actually Do",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/medium-shot-people-working-with-computers-1024x683.webp",
+      "alt": "Fixelcloud About us",
+      "width": 1024,
+      "height": 683
+     }
+    },
+    {
+     "heading": "Improve and Innovate with the Tech Trends",
+     "kind": "image",
+     "image": {
+      "src": "/media/2024/12/Group-1000003967-2-1138x1536.webp",
+      "alt": "Fixelcloud",
+      "width": 1138,
+      "height": 1536
+     }
+    }
+   ]
+  },
+  "our-team": {
+   "sections": [
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member1.webp",
+      "alt": "",
+      "width": 720,
+      "height": 987
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member5.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member2.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member6.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member3.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member7.webp",
+      "alt": "",
+      "width": 720,
+      "height": 987
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member4.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    },
+    {
+     "heading": "Our Leadership Team",
+     "kind": "image",
+     "image": {
+      "src": "/media/2020/01/member8.webp",
+      "alt": "",
+      "width": 720,
+      "height": 986
+     }
+    }
+   ]
+  },
+  "why-choose-us": {
+   "projects": true
+  },
+  "ai-messaging-solutions": {
+   "gallery": [
+    {
+     "src": "/media/2025/05/Mask-group-1.webp",
+     "alt": "",
+     "width": 379,
+     "height": 160
+    },
+    {
+     "src": "/media/2025/05/Mask-group-2.webp",
+     "alt": "",
+     "width": 378,
+     "height": 160
+    },
+    {
+     "src": "/media/2025/05/Mask-group-3.webp",
+     "alt": "",
+     "width": 379,
+     "height": 160
+    },
+    {
+     "src": "/media/2025/05/Mask-group-4.webp",
+     "alt": "",
+     "width": 379,
+     "height": 160
+    },
+    {
+     "src": "/media/2025/05/Mask-group-5.webp",
+     "alt": "",
+     "width": 378,
+     "height": 160
+    },
+    {
+     "src": "/media/2025/05/Mask-group-6.webp",
+     "alt": "",
+     "width": 379,
+     "height": 160
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Business-Ready AI Messaging Solutions",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/Desktop-3-1.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 720
+     }
+    },
+    {
+     "heading": "Engage. Automate. Grow.",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/Group-1000006011.webp",
+      "alt": "",
+      "width": 518,
+      "height": 511
+     }
+    },
+    {
+     "heading": "What Are AI Messenger Bots?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2025/05/Frame-334256-1.webp",
+      "alt": "",
+      "width": 1446,
+      "height": 708
+     }
+    },
+    {
+     "heading": "What Are AI Messenger Bots?",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/Group-1000006013.webp",
+      "alt": "",
+      "width": 455,
+      "height": 424
+     }
+    },
+    {
+     "heading": "Why Choose AI Bots for Your Business?",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/Group-1000006026.webp",
+      "alt": "",
+      "width": 488,
+      "height": 673
+     }
+    },
+    {
+     "heading": "Ready to Build Your Bot?",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/Frame-334231.webp",
+      "alt": "",
+      "width": 1280,
+      "height": 379
+     }
+    }
+   ]
+  },
+  "ai-chatbot-integrations": {
+   "gallery": [
+    {
+     "src": "/media/2025/05/5081336-1024x1024.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "sections": [
+    {
+     "heading": "Customer Support Automation",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/face-recognition-personal-identification-collage-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    },
+    {
+     "heading": "Sales & Lead Generation Bots",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/anthropomorphic-robot-performing-regular-human-job-future-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 887
+     }
+    },
+    {
+     "heading": "AI Virtual Assistants",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/business-lady-using-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1068
+     }
+    },
+    {
+     "heading": "AI Virtual Assistants",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/people-looking-day-menu-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    },
+    {
+     "heading": "AI Messenger Bots",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/05/big-brother-surveillance-concept-composition-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1064
+     }
+    }
+   ]
+  },
+  "portfolio/bellemar": {
+   "lead": {
+    "src": "/media/2025/04/1-Bellemar-Main-1024x820.webp",
+    "alt": "",
+    "width": 1024,
+    "height": 820
+   },
+   "gallery": [
+    {
+     "src": "/media/2025/04/2-Bellemar-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    },
+    {
+     "src": "/media/2025/04/3-Bellemar-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    },
+    {
+     "src": "/media/2025/04/4-Bellemar-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    }
+   ]
+  },
+  "portfolio/tlc-pr": {
+   "lead": {
+    "src": "/media/2025/04/1-TLC-Main-1024x819.webp",
+    "alt": "",
+    "width": 1024,
+    "height": 819
+   },
+   "gallery": [
+    {
+     "src": "/media/2025/04/2-TLC-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/3-TLC-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/4-TLC-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    }
+   ]
+  },
+  "portfolio/hanalei-colony-resort": {
+   "lead": {
+    "src": "/media/2025/04/1-HCR-Main-1024x819.webp",
+    "alt": "",
+    "width": 1024,
+    "height": 819
+   },
+   "gallery": [
+    {
+     "src": "/media/2025/04/2-HCR-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/3-HCR-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/4-HCR-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    }
+   ]
+  },
+  "portfolio/aloh-lights-to-digital-life": {
+   "lead": {
+    "src": "/media/2025/04/1-ALOH-Main-1024x819.webp",
+    "alt": "",
+    "width": 1024,
+    "height": 819
+   },
+   "gallery": [
+    {
+     "src": "/media/2025/04/2-ALOH-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/3-ALOH-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    },
+    {
+     "src": "/media/2025/04/4-ALOH-1024x819.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 819
+    }
+   ]
+  },
+  "portfolio/technology-design": {
+   "lead": {
+    "src": "/media/2019/11/Apple-1024x768.webp",
+    "alt": "technology",
+    "width": 1024,
+    "height": 768
+   },
+   "gallery": [
+    {
+     "src": "/media/2019/11/project-details-s1.webp",
+     "alt": "project-details-s1",
+     "width": 574,
+     "height": 325
+    },
+    {
+     "src": "/media/2019/11/project-details-s2.webp",
+     "alt": "project-details-s2",
+     "width": 574,
+     "height": 325
+    }
+   ]
+  },
+  "portfolio/healthcare": {
+   "lead": {
+    "src": "/media/2019/11/BSW-1024x768.webp",
+    "alt": "Healthcare",
+    "width": 1024,
+    "height": 768
+   }
+  },
+  "portfolio/insurance": {
+   "lead": {
+    "src": "/media/2019/11/Guidewire-1024x768.webp",
+    "alt": "Insurance",
+    "width": 1024,
+    "height": 768
+   }
+  },
+  "portfolio/saas": {
+   "lead": {
+    "src": "/media/2019/11/1-Hitch-Main-1024x820.webp",
+    "alt": "",
+    "width": 1024,
+    "height": 820
+   },
+   "gallery": [
+    {
+     "src": "/media/2019/11/2-Hitch-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    },
+    {
+     "src": "/media/2019/11/3-Hitch-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    },
+    {
+     "src": "/media/2019/11/4-Hitch-1024x820.webp",
+     "alt": "",
+     "width": 1024,
+     "height": 820
+    }
+   ]
+  },
+  "portfolio/us-bank-finance": {
+   "lead": {
+    "src": "/media/2019/11/US-Bank-1024x768.webp",
+    "alt": "us bank finance",
+    "width": 1024,
+    "height": 768
+   }
+  },
+  "services": {
+   "sections": [
+    {
+     "heading": "NEED A CONSULTATION?",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/05/70310f46-6f86-4e35-835e-f9a2dfd3ac51-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+     }
+    }
+   ]
+  },
+  "design-ideation/user-research": {
+   "sections": [
+    {
+     "heading": "How to Conduct Effective User Research",
+     "kind": "image",
+     "image": {
+      "src": "/media/2025/02/top-view-young-successful-businessman-white-shirt-working-wooden-table-scaled.webp",
+      "alt": "",
+      "width": 1600,
+      "height": 1067
+     }
+    },
+    {
+     "heading": "Design with Confidence, Backed by Data.",
+     "kind": "background",
+     "image": {
+      "src": "/media/2024/12/Linkedin-Banner.webp",
+      "alt": "",
+      "width": 1584,
+      "height": 402
+     }
+    }
+   ]
+  }
+ },
+ "posts": {
+  "ai-implementation-mistakes-that-cost-businesses-more-than-money": {
+   "src": "/media/2026/07/Gemini_Generated_Image_q1u3hbq1u3hbq1u3.webp",
+   "alt": "",
+   "width": 1376,
+   "height": 768
+  },
+  "accelerating-workflows-with-fixelclouds-intelligent-design-ecosystem": {
+   "src": "/media/2026/06/Gemini_Generated_Image_sllvoksllvoksllv.webp",
+   "alt": "",
+   "width": 1312,
+   "height": 816
+  },
+  "why-ruby-on-rails-is-still-a-smart-choice-for-web-development": {
+   "src": "/media/2026/05/Gemini_Generated_Image_4j97sk4j97sk4j97.webp",
+   "alt": "Ruby on Rails",
+   "width": 1408,
+   "height": 768
+  },
+  "how-n8n-automation-is-changing-the-way-businesses-work": {
+   "src": "/media/2026/04/Gemini_Generated_Image_mz2g8xmz2g8xmz2g.webp",
+   "alt": "",
+   "width": 1376,
+   "height": 768
+  },
+  "will-artificial-intelligence-replace-programmers": {
+   "src": "/media/2026/03/Gemini_Generated_Image_52xuoe52xuoe52xu.webp",
+   "alt": "programmers",
+   "width": 1600,
+   "height": 873
+  },
+  "maryam-nawazs-parwaaz-initiative-to-build-a-digital-future-for-youth": {
+   "src": "/media/2026/02/Maryam-Nawazs-Parwaaz-Initiative-to-Build-a-Digital-Future-for-Youth.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 800
+  },
+  "building-a-strong-design-community-with-ixdf-lahore": {
+   "src": "/media/2025/12/bbbf977f-dca4-42a8-ab27-d5a5ce06518a.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 900
+  },
+  "a-step-forward-in-pakistans-tech-ecosystem": {
+   "src": "/media/2025/11/Gemini_Generated_Image_z8mr06z8mr06z8mr.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 536
+  },
+  "the-impact-of-technology-on-modern-enterprises": {
+   "src": "/media/2025/10/3f6d985e-01ac-4415-ad6e-25aba97dc91a-scaled.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 1516
+  },
+  "how-technology-is-shaping-the-future-of-business-in-2025": {
+   "src": "/media/2025/08/future-visions-business-technology-concept-scaled.webp",
+   "alt": "technology",
+   "width": 1600,
+   "height": 1094
+  },
+  "how-chatbots-are-changing-customer-support": {
+   "src": "/media/2025/06/What-is-AI-Chatbot.webp",
+   "alt": "chatbot",
+   "width": 1200,
+   "height": 650
+  },
+  "how-bpo-helps-growing-small-businesses": {
+   "src": "/media/2025/06/concentrated-african-female-web-designer-using-graphics-tablet-while-her-colleagues-writing-reports-indoor-portrait-programmers-international-company-spending-time-together-workplace-scaled.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 1067
+  },
+  "how-the-latest-technology-is-changing-the-way-we-live-in-2025": {
+   "src": "/media/2025/06/metaverse-avatar-collage-concept-scaled.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 1067
+  },
+  "blockchain-technology-beyond-cryptocurrency": {
+   "src": "/media/2025/03/futuristic-technology-hologram-scaled.webp",
+   "alt": "blockchain",
+   "width": 1600,
+   "height": 914
+  },
+  "salesforce-customization-strategies-for-improved-crm-solutions": {
+   "src": "/media/2025/02/representation-user-experience-interface-design-scaled.webp",
+   "alt": "Salesforce",
+   "width": 1600,
+   "height": 1067
+  },
+  "software-development-models-which-one-to-choose": {
+   "src": "/media/2025/02/freepik__a-detailed-infographic-showcasing-the-agile-softwa__3883.webp",
+   "alt": "software development",
+   "width": 1216,
+   "height": 832
+  },
+  "application-development-with-drag-and-drop-solutions": {
+   "src": "/media/2025/02/Screenshot-2025-02-18-182645.webp",
+   "alt": "application development with drag and drop",
+   "width": 1207,
+   "height": 770
+  },
+  "avoid-these-artificial-intelligence-implementation-errors-for-greater-roi": {
+   "src": "/media/2025/02/young-woman-having-headache-work-scaled.webp",
+   "alt": "Artificial Intelligence",
+   "width": 1600,
+   "height": 1067
+  },
+  "why-startups-should-choose-custom-software-solutions": {
+   "src": "/media/2025/02/programmer-night-scaled.webp",
+   "alt": "",
+   "width": 1600,
+   "height": 1094
+  },
+  "exploring-the-potential-of-augmented-reality-in-modern-applications": {
+   "src": "/media/2025/02/person-using-ar-technology-perform-their-occupation-scaled.webp",
+   "alt": "AR",
+   "width": 1600,
+   "height": 1067
+  },
+  "exploring-the-impact-of-edge-computing-on-data-processing": {
+   "src": "/media/2025/02/two-colleagues-working-late-office-blue-light-night-view_482257-32812.webp",
+   "alt": "data processing",
+   "width": 1060,
+   "height": 596
+  },
+  "node-js": {
+   "src": "/media/2025/02/codeing.webp",
+   "alt": "Node.js",
+   "width": 1322,
+   "height": 738
+  },
+  "the-importance-of-ui-ux-in-modern-digital-experiences": {
+   "src": "/media/2025/01/image-13.webp",
+   "alt": "ui/ux",
+   "width": 900,
+   "height": 600
+  },
+  "mobile-app-development-dynamic-interfaces-user-experience-personalized-recommendations-real-time-updates": {
+   "src": "/media/2025/01/image-12.webp",
+   "alt": "mobile app development",
+   "width": 1049,
+   "height": 594
+  },
+  "8-affordable-ways-to-implement-an-ai-strategy": {
+   "src": "/media/2025/01/robot-working-as-painter-instead-humans_23-2150911981.webp",
+   "alt": "ai strategy",
+   "width": 1060,
+   "height": 594
+  },
+  "how-generative-ai-is-shaping-the-future-of-healthcare": {
+   "src": "/media/2025/01/image-11.webp",
+   "alt": "Future in ai healthcare",
+   "width": 900,
+   "height": 600
+  }
+ }
+}
