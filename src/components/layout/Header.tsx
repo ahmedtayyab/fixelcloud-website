@@ -278,13 +278,11 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
   const reduce = useReducedMotion();
 
   useEffect(() => {
     setOpen(false);
-    setSearchOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -320,12 +318,12 @@ export function Header() {
         </div>
       </div>
 
-      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-[115px] xl:px-[31px]">
+      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-[115px] xl:justify-start xl:gap-0 xl:px-[31px]">
         <Link to="/" aria-label="Fixelcloud home" className="flex shrink-0 items-center">
           <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="block h-10 w-auto xl:h-[47px] xl:w-[200px]" />
         </Link>
 
-        <nav className="hidden h-full items-center xl:mr-auto xl:ml-6 xl:flex" aria-label="Primary">
+        <nav className="hidden h-full items-center xl:ml-[68px] xl:flex" aria-label="Primary">
           <DesktopItem label="Services" href="/services" panel={(onPick) => <ServicesMenu onPick={onPick} />} />
           <DesktopItem label="Industries" href="/industries" panel={(onPick) => <IndustriesMenu onPick={onPick} />} />
           <DesktopItem label="About Us" href="/about-us" />
@@ -339,31 +337,21 @@ export function Header() {
           />
         </nav>
 
-        <div className="hidden h-full shrink-0 items-center gap-3 xl:flex">
-          <span className="h-7 w-px bg-line" aria-hidden="true" />
+        <div className="ml-auto hidden h-full shrink-0 items-center xl:flex">
+          <span className="mr-6 h-8 w-px bg-[#d9d9d9]" aria-hidden="true" />
           <a
-            className="inline-flex items-center gap-3 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
+            className="inline-flex items-center gap-2.5 text-[15px] font-bold whitespace-nowrap text-nav transition-colors hover:text-brand"
             href={usPhone.href}
           >
             <Flaticon name="phone" className="text-[22px] text-brand" />
             {usPhone.label}
           </a>
           <Link
-            className="press bg-brand px-4 py-4 text-[15px] leading-5 font-bold tracking-wide whitespace-nowrap text-white uppercase hover:bg-brand-dark"
+            className="press ml-5 inline-flex h-[51px] items-center bg-brand px-7 text-[15px] font-bold tracking-wide whitespace-nowrap text-white uppercase hover:bg-brand-dark"
             to="/estimate"
           >
             Estimate Project
           </Link>
-          <button
-            className="flex h-10 w-10 items-center justify-center text-nav transition-colors hover:text-brand"
-            type="button"
-            aria-label={searchOpen ? "Close search" : "Open search"}
-            aria-expanded={searchOpen}
-            aria-controls="site-search"
-            onClick={() => setSearchOpen((value) => !value)}
-          >
-            <SearchIcon />
-          </button>
         </div>
 
         <button
@@ -379,35 +367,6 @@ export function Header() {
           </svg>
         </button>
       </div>
-
-      <AnimatePresence>
-        {searchOpen ? (
-          <motion.div
-            id="site-search"
-            className="overflow-hidden border-t border-line bg-canvas"
-            initial={reduce ? false : { height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={reduce ? undefined : { height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <form action="/search" className="mx-auto flex max-w-[1226px] gap-2 px-5 py-4">
-              <label className="sr-only" htmlFor="header-search">
-                Search the site
-              </label>
-              <input
-                id="header-search"
-                className="w-full border border-line bg-white px-4 py-3 text-base text-ink transition-colors focus:border-brand"
-                name="q"
-                placeholder="Search"
-                autoFocus
-              />
-              <button className="press bg-brand px-6 text-[15px] font-bold text-white uppercase hover:bg-brand-dark" type="submit">
-                Search
-              </button>
-            </form>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
 
       <AnimatePresence>
         {open ? (
@@ -446,11 +405,3 @@ export function Header() {
   );
 }
 
-function SearchIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="2">
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-4-4" />
-    </svg>
-  );
-}
