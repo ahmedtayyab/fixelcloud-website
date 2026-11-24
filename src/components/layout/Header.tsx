@@ -320,7 +320,13 @@ export function Header() {
 
       <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 xl:h-[115px] xl:justify-start xl:gap-0 xl:px-[31px]">
         <Link to="/" aria-label="Fixelcloud home" className="flex shrink-0 items-center">
-          <img src={site.logo} alt="Fixelcloud" width={200} height={47} className="block h-10 w-auto xl:h-[47px] xl:w-[200px]" />
+          <img
+            src={site.logo}
+            alt="Fixelcloud"
+            width={200}
+            height={47}
+            className="block h-10 w-auto xl:h-auto xl:w-[clamp(155px,calc(155px+(100vw-1280px)*0.32),200px)]"
+          />
         </Link>
 
         <nav className="hidden h-full items-center xl:ml-[68px] xl:flex" aria-label="Primary">
