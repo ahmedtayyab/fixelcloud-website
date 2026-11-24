@@ -154,6 +154,74 @@ export const mainNav = [
   { label: "Our Products", href: "/finhub", kind: "products" as const },
 ];
 
+/** Desktop services menu, in the original column order. */
+export const serviceMenu: { label: string; href: string; items: NavLink[] }[][] = [
+  [{ label: "All Services", href: "/services", items: [] }],
+  [
+    {
+      label: "Cooperation Staff Models",
+      href: "/cooperative-staff-model",
+      items: [
+        { label: "Dedicated Teams", href: "/cooperative-staff-model/dedicated-teams" },
+        { label: "Staff Augmentation", href: "/cooperative-staff-model/staff-augmentation" },
+        { label: "Digital Acceleration", href: "/cooperative-staff-model/digital-acceleration" },
+      ],
+    },
+    {
+      label: "Tech Solutions",
+      href: "/services",
+      items: [
+        { label: "Web Development", href: "/services/website-development" },
+        { label: "Mobile Development", href: "/services/mobile-development" },
+        { label: "MEAN / MERN", href: "/services/mean-mern-development" },
+        { label: "E-commerce Integration", href: "/ecommerce/ecommerce-integration-service" },
+      ],
+    },
+  ],
+  [
+    {
+      label: "Social Media Marketing",
+      href: "/social-media-marketing",
+      items: [
+        { label: "Social Media Management", href: "/social-media-marketing/social-media-management" },
+        { label: "Social Media Advertising", href: "/social-media-marketing/social-media-advertising" },
+        { label: "Content Marketing", href: "/social-media-marketing/content-marketing" },
+      ],
+    },
+    {
+      label: "Design & Ideation",
+      href: "/design-ideation",
+      items: [
+        { label: "User Research", href: "/design-ideation/user-research" },
+        { label: "Product Design", href: "/design-ideation/product-design" },
+        { label: "UI/UX Design", href: "/design-ideation/ui-ux-design" },
+        { label: "Design Systems", href: "/design-ideation/design-system" },
+      ],
+    },
+  ],
+  [
+    {
+      label: "Generative AI and Data",
+      href: "/generative-ai-and-data",
+      items: [
+        { label: "Artificial Intelligence", href: "/generative-ai-and-data/artificial-intelligence" },
+        { label: "Machine Learning", href: "/generative-ai-and-data/machine-learning" },
+        { label: "Data Engineering", href: "/generative-ai-and-data/data-engineering" },
+      ],
+    },
+    {
+      label: "Enterprise Solutions",
+      href: "/enterprise-solutions",
+      items: [
+        { label: "Quality Assurance", href: "/enterprise-solutions/quality-assurance" },
+        { label: "Cloud Strategy", href: "/services/cloud-strategy" },
+        { label: "Cybersecurity", href: "/enterprise-solutions/cybersecurity" },
+        { label: "Business Process Outsourcing", href: "/enterprise-solutions/business-process-outsourcing" },
+      ],
+    },
+  ],
+];
+
 export const serviceIcons: Record<string, FlaticonName> = {
   "/services": "code",
   "/cooperative-staff-model": "report-1",

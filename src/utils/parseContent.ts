@@ -8,6 +8,8 @@ export interface Plan {
 export interface TitledText {
   title: string;
   text: string;
+  /** Published step number, such as "04", when the original page numbered the item. */
+  number?: string;
 }
 
 export interface Quote {
@@ -58,7 +60,6 @@ const SKIP = new Set([
   "choose plan",
   "choose plane",
   "view more",
-  "view all projects",
 ]);
 
 /* Button labels on the original pages. Most open the contact form; a few are product links. */
@@ -74,6 +75,9 @@ const ACTIONS = new Set([
   "sign in to finhub",
   "explore the modules",
   "our services",
+  "learn more",
+  "view all projects",
+  "all news",
 ]);
 
 const EYEBROW = /^\/\/\s*(.+)$/;
@@ -96,7 +100,7 @@ const isLabel = (text: string) => text.length <= 60 && !/[.!?]$/.test(text);
 const isSentence = (text: string) => text.length > 30 && /[.!?)]$/.test(text);
 
 type Atom =
-  | { type: "heading"; level: 2 | 3; text: string; eyebrow?: string; numbered?: boolean }
+  | { type: "heading"; level: 2 | 3; text: string; eyebrow?: string; numbered?: boolean; step?: string }
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
 
@@ -112,7 +116,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       continue;
     }
     if (/^\d{1,2}\.?$/.test(line) && rawBlocks[index + 1]?.startsWith("##H")) {
-      lines.push(NUMBER);
+      lines.push(`#number ${line.replace(/\.$/, "").padStart(2, "0")}`);
       continue;
     }
     if (isNoise(line)) continue;
@@ -142,7 +146,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
     if (
       heading &&
       next &&
-      next !== NUMBER &&
+      !next.startsWith(NUMBER) &&
       !/^["“]/.test(lines[index + 2] ?? "") &&
       !next.startsWith("##H") &&
       !next.startsWith("//") &&
@@ -167,6 +171,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
   let list: string[] | null = null;
   let eyebrow: string | undefined;
   let numbered = false;
+  let step: string | undefined;
 
   const closeList = () => {
     if (list && list.length) atoms.push({ type: "list", items: list });
@@ -181,8 +186,10 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
     }
     closeList();
 
-    if (line === NUMBER) {
+    const stepLine = line.match(/^#number(?:\s+(\d{2}))?$/);
+    if (stepLine) {
       numbered = true;
+      step = stepLine[1];
       continue;
     }
 
@@ -198,9 +205,10 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       if (!text) continue;
       const level = Number(heading[1]) <= 3 ? 2 : 3;
       if (text === title && atoms.length === 0) continue;
-      atoms.push({ type: "heading", level, text, eyebrow: level === 2 ? eyebrow : undefined, numbered });
+      atoms.push({ type: "heading", level, text, eyebrow: level === 2 ? eyebrow : undefined, numbered, step });
       eyebrow = undefined;
       numbered = false;
+      step = undefined;
       continue;
     }
 
@@ -273,12 +281,20 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
         const heading = atoms[cursor];
         const body = atoms[cursor + 1];
         if (heading?.type === "heading" && heading.level === 3 && body?.type === "paragraph") {
-          features.push({ title: heading.text, text: body.text });
+          features.push({ title: heading.text, text: body.text, number: heading.step });
           cursor += 2;
           continue;
         }
         break;
       }
+      const seen = new Set<string>();
+      const unique = features.filter((item) => {
+        const id = `${item.number ?? ""}\0${item.title}\0${item.text}`;
+        if (seen.has(id)) return false;
+        seen.add(id);
+        return true;
+      });
+      features.splice(0, features.length, ...unique);
       if (features.length >= 3) {
         blocks.push({ type: "features", items: features, numbered: Boolean(atom.numbered) });
         index = cursor - 1;
@@ -305,6 +321,11 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
           continue;
         }
       }
+    }
+
+    if (widgets && atom.type === "list" && atom.items.length === 1 && atom.items[0].toLowerCase() === "learn more") {
+      blocks.push({ type: "action", label: "Learn more", ...actionLink("Learn more", previousHeading(blocks)) });
+      continue;
     }
 
     if (widgets && atom.type === "list" && atom.items.length >= 2 && atom.items.length <= 6) {
@@ -339,7 +360,7 @@ export function parseContent(rawBlocks: string[], { stopAt, widgets = false }: P
       }
 
       if (ACTIONS.has(atom.text.toLowerCase())) {
-        blocks.push({ type: "action", label: atom.text, ...actionLink(atom.text) });
+        blocks.push({ type: "action", label: atom.text, ...actionLink(atom.text, previousHeading(blocks)) });
         continue;
       }
 
@@ -383,11 +404,50 @@ function toPeople(labels: string[]) {
   return people;
 }
 
-function actionLink(label: string): { href: string; external?: boolean } {
+const learnMoreRoutes: Record<string, string> = {
+  "health care": "/industries/healthcare",
+  healthcare: "/industries/healthcare",
+  education: "/industries/education",
+  fintech: "/industries/fintech",
+  retail: "/industries/retail",
+  telecommunication: "/industries/telecommunication",
+  "media and entertainment": "/industries/media-and-entertainment",
+  "ecommerce app development": "/ecommerce/ecommerce-app-development",
+  "e-commerce app development": "/ecommerce/ecommerce-app-development",
+  "custom ecommerce design": "/ecommerce/ecommerce-design",
+  "e-commerce design": "/ecommerce/ecommerce-design",
+  "e-commerce integration service": "/ecommerce/ecommerce-integration-service",
+  "e-commerce integration services": "/ecommerce/ecommerce-integration-service",
+  "php website development services": "/services/website-development",
+};
+
+function learnMoreHref(heading?: string) {
+  if (!heading) return "/contacts";
+  const key = heading.toLowerCase().replace(/\s+/g, " ").trim();
+  if (learnMoreRoutes[key]) return learnMoreRoutes[key];
+  if (heading.length > 40) {
+    const slug = key.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return `/blog/${slug}`;
+  }
+  return "/contacts";
+}
+
+function actionLink(label: string, heading?: string): { href: string; external?: boolean } {
   const key = label.toLowerCase();
   if (key.startsWith("sign in")) return { href: "https://finhub.fixelcloud.co", external: true };
   if (key === "our services" || key === "explore the modules") return { href: "/services" };
+  if (key === "view all projects") return { href: "/portfolio" };
+  if (key === "all news") return { href: "/blog" };
+  if (key === "learn more") return { href: learnMoreHref(heading) };
   return { href: "/contacts" };
+}
+
+function previousHeading(blocks: ContentNode[]) {
+  for (let index = blocks.length - 1; index >= 0; index -= 1) {
+    const block = blocks[index];
+    if (block.type === "heading") return block.text;
+  }
+  return undefined;
 }
 
 function isPlanStart(atoms: Atom[], index: number) {

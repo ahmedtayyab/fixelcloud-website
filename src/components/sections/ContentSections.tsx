@@ -61,6 +61,12 @@ function isIllustration(image: MediaImage) {
   return ratio >= 0.8 && ratio <= 1.2 && image.width <= 800;
 }
 
+/* Product mockups, including the tall smartwatch, sit between the step columns. */
+function isDiagram(image: MediaImage) {
+  const ratio = image.width / image.height;
+  return image.width <= 800 && ratio >= 0.45 && ratio <= 1.25;
+}
+
 function FeatureColumn({ items, start, numbered }: { items: TitledText[]; start: number; numbered: boolean }) {
   return (
     <ol className="space-y-8">
@@ -68,7 +74,7 @@ function FeatureColumn({ items, start, numbered }: { items: TitledText[]; start:
         <li key={start + index}>
           {numbered ? (
             <span className="font-display text-[28px] leading-none font-extrabold text-brand">
-              {String(start + index + 1).padStart(2, "0")}.
+              {item.number ?? String(start + index + 1).padStart(2, "0")}.
             </span>
           ) : null}
           <h3 className="heading-card mt-2">{item.title}</h3>
@@ -96,19 +102,39 @@ function CenteredFeatures({
     <section>
       <Container className="py-12 md:py-16">
         <Title section={section} align="center" />
-        <figure className="mx-auto mb-10 flex max-w-[320px] justify-center lg:hidden">
+        <figure className="mx-auto mb-10 flex max-w-[380px] justify-center lg:hidden">
           <Picture image={image} />
         </figure>
         <div className="lg:hidden">
           <FeatureColumn items={items} start={0} numbered={numbered} />
         </div>
-        <div className="hidden items-center gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(200px,320px)_minmax(0,1fr)] lg:gap-10">
+        <div className="hidden items-center gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-14">
           <FeatureColumn items={items.slice(0, mid)} start={0} numbered={numbered} />
-          <figure className="flex justify-center">
+          <figure className="flex justify-center" style={{ width: Math.min(image.width, 380) }}>
             <Picture image={image} />
           </figure>
           <FeatureColumn items={items.slice(mid)} start={mid} numbered={numbered} />
         </div>
+      </Container>
+    </section>
+  );
+}
+
+/* A wide photo under the copy, as on the industry and ecommerce intros. */
+function BannerSection({ section, image }: { section: ContentSection; image: MediaImage }) {
+  return (
+    <section>
+      <Container className="py-12 md:py-16">
+        <img
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+          className="mb-8 h-auto w-full"
+        />
+        <Title section={section} />
+        <ContentBody blocks={section.nodes} compact />
       </Container>
     </section>
   );
@@ -230,10 +256,10 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
   const sections = toSections(blocks);
   const body: ReactNode[] = [];
   const closing: ReactNode[] = [];
-  const firstTitled = sections.findIndex((section) => section.heading);
   let hasProjects = false;
   let hasCta = false;
   let logosPlaced = false;
+  let splitPlaced = false;
   const sparse: ContentSection[] = [];
   const flushSparse = () => {
     if (!sparse.length) return;
@@ -296,7 +322,17 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
     const hasProse = section.nodes.some(
       (node) => node.type === "paragraph" || node.type === "tabs" || node.type === "accordion" || node.type === "plans",
     );
-    if (images.length === 1 && featureNode?.type === "features" && !hasProse && isIllustration(images[0]) && !key.startsWith("whychoos")) {
+    const place = attached.find((item) => item.kind === "image")?.place;
+    if (images.length === 1 && place === "full") {
+      body.push(<BannerSection key={index} section={section} image={images[0]} />);
+      return;
+    }
+    if (images.length === 1 && (place === "left" || place === "right")) {
+      splitPlaced = true;
+      body.push(<SplitSection key={index} section={section} image={images[0]} imageFirst={place === "left"} />);
+      return;
+    }
+    if (images.length === 1 && featureNode?.type === "features" && !hasProse && (place === "center" || isDiagram(images[0])) && !key.startsWith("whychoos")) {
       body.push(
         <CenteredFeatures
           key={index}
@@ -313,7 +349,9 @@ export function ContentSections({ blocks, media = {} }: { blocks: ContentNode[];
       return;
     }
     if (images.length === 1) {
-      body.push(<SplitSection key={index} section={section} image={images[0]} imageFirst={index === firstTitled} />);
+      const imageFirst = !splitPlaced;
+      splitPlaced = true;
+      body.push(<SplitSection key={index} section={section} image={images[0]} imageFirst={imageFirst} />);
       return;
     }
     if (!section.nodes.length && media.logos?.length && !logosPlaced && /tools|technolog/.test(key)) {

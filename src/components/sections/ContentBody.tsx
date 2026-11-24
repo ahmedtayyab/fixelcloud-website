@@ -25,7 +25,7 @@ function Features({ items, numbered, compact }: { items: TitledText[]; numbered:
             {numbered ? (
               <article className="h-full">
                 <span className="font-display text-[28px] leading-none font-extrabold text-brand">
-                  {String(index + 1).padStart(2, "0")}.
+                  {item.number ?? String(index + 1).padStart(2, "0")}.
                 </span>
                 <h3 className="heading-card mt-3">{item.title}</h3>
                 <p className="mt-3 text-base leading-8">{item.text}</p>

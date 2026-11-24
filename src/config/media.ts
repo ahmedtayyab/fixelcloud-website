@@ -12,6 +12,8 @@ export interface SectionMedia {
   heading: string;
   /** "background" images filled the whole section (closing CTA bands); "image" ones sat beside the text. */
   kind: "image" | "background";
+  /** Where this image sits on the original page. */
+  place?: "left" | "right" | "center" | "full";
   image: MediaImage;
 }
 

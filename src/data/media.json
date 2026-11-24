@@ -11,7 +11,8 @@
       "alt": "website developer",
       "width": 375,
       "height": 676
-     }
+     },
+     "place": "left"
     },
     {
      "heading": "We Organize Our Production Process",
@@ -46,7 +47,8 @@
       "alt": "app development",
       "width": 710,
       "height": 697
-     }
+     },
+     "place": "left"
     },
     {
      "heading": "Our App Development Approach",
@@ -56,7 +58,8 @@
       "alt": "app development",
       "width": 371,
       "height": 567
-     }
+     },
+     "place": "center"
     },
     {
      "heading": "Mobile Apps That Users Love.",
@@ -81,7 +84,8 @@
       "alt": "MEAN/MERN development",
       "width": 1024,
       "height": 1024
-     }
+     },
+     "place": "left"
     },
     {
      "heading": "We Organize Our Production Process",
@@ -116,7 +120,8 @@
       "alt": "cloud strategy",
       "width": 1024,
       "height": 681
-     }
+     },
+     "place": "left"
     },
     {
      "heading": "Cloud Strategy Benefits",
@@ -126,7 +131,8 @@
       "alt": "cloud services",
       "width": 626,
       "height": 626
-     }
+     },
+     "place": "center"
     }
    ]
   },
@@ -148,7 +154,8 @@
       "alt": "staff augmentation",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     }
    ]
   },
@@ -162,7 +169,8 @@
       "alt": "dedicated teams",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     }
    ]
   },
@@ -176,7 +184,8 @@
       "alt": "digital acceleration",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     }
    ]
   },
@@ -214,7 +223,8 @@
       "alt": "artificial intelligence",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "AI Chatbot Integrations",
@@ -248,7 +258,8 @@
       "alt": "machine learning",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "Let’s Build Intelligent Systems",
@@ -272,7 +283,8 @@
       "alt": "data engineering",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "Data You Can Trust, Infrastructure That Scales.",
@@ -346,7 +358,8 @@
       "alt": "product design",
       "width": 668,
       "height": 670
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "Intuitive & Scalable Digital Products",
@@ -592,7 +605,8 @@
       "alt": "design system",
       "width": 1317,
       "height": 873
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "Consistency Meets Efficiency.",
@@ -748,7 +762,8 @@
       "alt": "quality assurance",
       "width": 1024,
       "height": 681
-     }
+     },
+     "place": "right"
     }
    ]
   },
@@ -762,7 +777,8 @@
       "alt": "agile project management",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -786,7 +802,8 @@
       "alt": "",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "Essential Cybersecurity Practices",
@@ -810,7 +827,8 @@
       "alt": "",
       "width": 1024,
       "height": 681
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "Employee Training & Skill Development",
@@ -820,7 +838,8 @@
       "alt": "No training cost",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "right"
     }
    ]
   },
@@ -878,7 +897,8 @@
       "alt": "",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -902,7 +922,8 @@
       "alt": "",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -926,7 +947,8 @@
       "alt": "machine learning",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -950,7 +972,8 @@
       "alt": "machine learning",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -974,7 +997,8 @@
       "alt": "",
       "width": 1024,
       "height": 684
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -998,7 +1022,8 @@
       "alt": "",
       "width": 1024,
       "height": 683
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -1066,7 +1091,8 @@
       "alt": "e-commerce integration services",
       "width": 500,
       "height": 500
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "Sell Smarter, Not Harder.",
@@ -1134,7 +1160,8 @@
       "alt": "e-commerce design",
       "width": 600,
       "height": 500
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -1202,7 +1229,8 @@
       "alt": "e-commerce app development",
       "width": 500,
       "height": 500
-     }
+     },
+     "place": "full"
     },
     {
      "heading": "NEED A CONSULTATION?",
@@ -1457,7 +1485,8 @@
       "alt": "",
       "width": 518,
       "height": 511
-     }
+     },
+     "place": "left"
     },
     {
      "heading": "What Are AI Messenger Bots?",
@@ -1477,7 +1506,8 @@
       "alt": "",
       "width": 455,
       "height": 424
-     }
+     },
+     "place": "right"
     },
     {
      "heading": "Why Choose AI Bots for Your Business?",

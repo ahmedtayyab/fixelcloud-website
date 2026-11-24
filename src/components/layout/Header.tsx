@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { site } from "../../config/site";
-import { ecommerceGroup, industryLinks, mainNav, productLinks, serviceGroups } from "../../data/navigation";
+import { ecommerceGroup, industryLinks, mainNav, productLinks, serviceMenu } from "../../data/navigation";
 import { Collapse } from "../ui/Collapse";
 import { Flaticon, SvgIcon } from "../ui/Icons";
 
@@ -51,21 +51,27 @@ function MenuHeading({ href, children, onPick }: { href: string; children: strin
 
 function ServicesMenu({ onPick }: { onPick: () => void }) {
   return (
-    <div className="grid grid-cols-3 gap-x-10 gap-y-8">
-      {serviceGroups.map((group) => (
-        <div key={group.href}>
-          <MenuHeading href={group.href} onPick={onPick}>
-            {group.label}
-          </MenuHeading>
-          <ul className="mt-4 border-t border-line pt-3">
-            {group.items.map((item) => (
-              <li key={item.href}>
-                <MenuLink href={item.href} onPick={onPick}>
-                  {item.label}
-                </MenuLink>
-              </li>
-            ))}
-          </ul>
+    <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+      {serviceMenu.map((column, columnIndex) => (
+        <div key={columnIndex} className="space-y-8">
+          {column.map((group) => (
+            <div key={group.label}>
+              <MenuHeading href={group.href} onPick={onPick}>
+                {group.label}
+              </MenuHeading>
+              {group.items.length ? (
+                <ul className="mt-4 border-t border-line pt-3">
+                  {group.items.map((item) => (
+                    <li key={item.href}>
+                      <MenuLink href={item.href} onPick={onPick}>
+                        {item.label}
+                      </MenuLink>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -198,7 +204,9 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
   const sections = [
     {
       id: "Services",
-      links: serviceGroups.flatMap((group) => [{ label: group.label, href: group.href, heading: true }, ...group.items]),
+      links: serviceMenu.flatMap((column) =>
+        column.flatMap((group) => [{ label: group.label, href: group.href, heading: true }, ...group.items]),
+      ),
     },
     {
       id: "Industries",
