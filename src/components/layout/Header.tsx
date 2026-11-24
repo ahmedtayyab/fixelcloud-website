@@ -24,7 +24,7 @@ function MenuLink({
   onPick: () => void;
 }) {
   const className =
-    "block font-sans text-[12px] font-bold uppercase leading-[30px] text-[#777] transition-colors hover:text-brand";
+    "flex h-[50px] items-center font-sans text-[12px] font-bold uppercase leading-[30px] text-[#777] transition-colors hover:text-brand";
   if (external) {
     return (
       <a className={className} href={href} target="_blank" rel="noreferrer" onClick={onPick}>
@@ -52,7 +52,7 @@ function MenuHeading({
 }) {
   return (
     <Link
-      className={`block font-sans text-[16px] font-medium uppercase leading-normal text-[#101010] transition-colors hover:text-brand ${className}`}
+      className={`block font-sans text-[16px] font-bold uppercase leading-[19px] text-[#101010] transition-colors hover:text-brand ${className}`}
       to={href}
       onClick={onPick}
     >
@@ -64,7 +64,7 @@ function MenuHeading({
 function MenuList({
   items,
   onPick,
-  className = "mt-[9px]",
+  className = "mt-2",
 }: {
   items: { label: string; href: string; external?: boolean }[];
   onPick: () => void;
@@ -72,7 +72,7 @@ function MenuList({
 }) {
   if (!items.length) return null;
   return (
-    <ul className={`${className} space-y-2.5`}>
+    <ul className={className}>
       {items.map((item) => (
         <li key={item.href}>
           <MenuLink href={item.href} external={item.external} onPick={onPick}>
@@ -91,7 +91,7 @@ function ServicesMenu({ onPick }: { onPick: () => void }) {
         {serviceMenu.map((column, columnIndex) => (
           <div key={columnIndex} className="min-w-0">
             {column.map((group, groupIndex) => (
-              <div key={group.label} className={groupIndex > 0 ? "mt-10" : undefined}>
+              <div key={group.label} className={groupIndex > 0 ? "mt-14" : undefined}>
                 <MenuHeading href={group.href} onPick={onPick}>
                   {group.label}
                 </MenuHeading>
@@ -169,12 +169,15 @@ function DesktopItem({
     >
       <NavLink
         className={({ isActive }) =>
-          `inline-flex h-full items-center gap-1.5 pr-4 font-sans text-base font-bold whitespace-nowrap text-nav transition-colors hover:text-brand ${isActive ? "text-brand" : ""}`
+          `relative inline-flex h-full items-center gap-1.5 pr-4 font-sans text-base font-bold whitespace-nowrap transition-colors hover:text-brand ${isActive || open ? "text-brand" : "text-nav"}`
         }
         to={href}
         onClick={dismiss}
       >
-        {label}
+        <span className="relative">
+          {label}
+          {open ? <span aria-hidden="true" className="absolute top-[calc(100%+30px)] left-0 h-0.5 w-full bg-brand" /> : null}
+        </span>
         {panel ? (
           <svg
             aria-hidden="true"
@@ -240,7 +243,7 @@ function MobileGroups({ onNavigate }: { onNavigate: () => void }) {
               {section.links.map((link) => {
                 const heading = "heading" in link && link.heading;
                 const className = heading
-                  ? "block py-1.5 font-sans text-[16px] font-medium uppercase leading-normal text-[#101010]"
+                  ? "block py-1.5 font-sans text-[16px] font-bold uppercase leading-[19px] text-[#101010]"
                   : "block py-1 font-sans text-[12px] font-bold uppercase leading-[30px] text-[#777] transition-colors hover:text-brand";
                 return (
                   <li key={`${link.label}-${link.href}`} className={heading ? "pt-4 first:pt-1" : undefined}>
